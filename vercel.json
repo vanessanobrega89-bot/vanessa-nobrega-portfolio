@@ -1,7 +1,7 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/VNobrega-Landing-Salariat.html" }
+    { "source": "/", "destination": "/VNobrega-Landing-Salariat" }
   ],
   "headers": [
     {
