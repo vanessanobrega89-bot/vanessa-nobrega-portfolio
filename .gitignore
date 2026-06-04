@@ -1,0 +1,26 @@
+# Documents privés (CV, lettres, mails type)
+*.docx
+*.pdf
+
+# Photos sources (déjà inlinées en base64 dans le HTML)
+*.jpg
+*.jpeg
+*.png
+
+# Notes de projet (privées, ne doivent pas être publiques)
+CLAUDE.md
+HANDOVER.md
+
+# Landing freelance — gardée locale, non déployée pour l'instant
+VNobrega-Landing-Freelance.html
+
+# macOS
+.DS_Store
+
+# Claude Code config
+.claude/
+
+# Logs et fichiers temporaires
+*.log
+*.b64
+*.b64.flat
