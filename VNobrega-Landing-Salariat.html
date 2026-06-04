@@ -332,6 +332,17 @@
     border-color: var(--ink);
     transform: translateY(-1px);
   }
+  .kw--key {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+    font-size: 14px;
+    padding: 11px 20px;
+  }
+  .kw--key:hover {
+    background: var(--ink-soft);
+    border-color: var(--ink-soft);
+  }
   @keyframes kw-fade-in {
     from { opacity: 0; transform: translateY(24px) scale(0.92); }
     to   { opacity: 1; transform: translateY(0) scale(1); }
@@ -675,13 +686,13 @@
     </div>
     <h2>Ce sur quoi je travaille <em>au quotidien.</em></h2>
     <div class="keywords-wrap">
-      <span class="kw">#stratégie-360</span>
+      <span class="kw kw--key">#stratégie-360</span>
       <span class="kw">#pilotage</span>
       <span class="kw">#coordination</span>
       <span class="kw">#budget</span>
       <span class="kw">#analyse</span>
-      <span class="kw">#IA</span>
-      <span class="kw">#vulgarisation-tech</span>
+      <span class="kw kw--key">#IA</span>
+      <span class="kw kw--key">#vulgarisation-tech</span>
       <span class="kw">#contenus</span>
       <span class="kw">#créa</span>
       <span class="kw">#digital</span>
