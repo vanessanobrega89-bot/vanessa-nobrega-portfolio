@@ -497,6 +497,9 @@
     font-size: 13px;
     color: var(--grey);
   }
+  footer.legal .footer-links { display: flex; gap: 24px; }
+  footer.legal .footer-links a { color: var(--grey); text-decoration: none; }
+  footer.legal .footer-links a:hover { color: var(--ink); }
   footer.legal .wrap {
     display: flex;
     justify-content: space-between;
@@ -779,7 +782,10 @@
 <footer class="legal">
   <div class="wrap">
     <span>Vanessa Nobrega · 2026</span>
-    <span>Nice · France</span>
+    <span class="footer-links">
+      <a href="mailto:vanessa.nobrega89@gmail.com">vanessa.nobrega89@gmail.com</a>
+      <a href="https://www.linkedin.com/in/vanessanobrega/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </span>
   </div>
 </footer>
 
