@@ -6,6 +6,7 @@
 *.jpg
 *.jpeg
 *.png
+*.webp
 
 # … sauf les images réellement utilisées par le site déployé (logos Parcours + strip En action)
 !logos/lamaisondelia.png
@@ -15,6 +16,14 @@
 !photos-action/stock-salon.jpg
 !photos-action/stock-formation.jpg
 !photos-action/stock-conf.jpg
+!photos-action/apropos.jpg
+!photos-action/spec-comm.jpg
+!photos-action/spec-ia.jpg
+!photos-action/spec-contenus.jpg
+
+# … et les assets de partage / favicon (favicon.svg est déjà suivi)
+!og-image.png
+!apple-touch-icon.png
 
 # Notes de projet (privées, ne doivent pas être publiques)
 CLAUDE.md
