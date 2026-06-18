@@ -7,9 +7,20 @@
 *.jpeg
 *.png
 
+# … sauf les images réellement utilisées par le site déployé (logos Parcours + strip En action)
+!logos/lamaisondelia.png
+!logos/minodusud.png
+!logos/ascoma.png
+!photos-action/stock-talk.jpg
+!photos-action/stock-salon.jpg
+!photos-action/stock-formation.jpg
+!photos-action/stock-conf.jpg
+
 # Notes de projet (privées, ne doivent pas être publiques)
 CLAUDE.md
 HANDOVER.md
+Cowork-Recherche-Emploi.md
+VNobrega-CV-Referente-IA.html
 
 # Landing freelance — gardée locale, non déployée pour l'instant
 VNobrega-Landing-Freelance.html
