@@ -400,7 +400,7 @@
     .js #specialites .spec-media .spec-img { transform: none; transition: none; }
   }
   /* Machine à écrire — titre Contact */
-  #contact h2 .tw-caret { display:inline-block; width:0.055em; height:0.95em; background:currentColor; margin-left:0.06em; vertical-align:-0.06em; animation: tw-blink 0.9s steps(1) infinite; }
+  .tw-caret { display:inline-block; width:0.055em; height:0.95em; background:currentColor; margin-left:0.04em; vertical-align:-0.06em; animation: tw-blink 0.9s steps(1) infinite; }
   @keyframes tw-blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
 
   /* ===== COLLABORATIONS / EDITORIAL LIST ===== */
@@ -1653,6 +1653,31 @@
       entries.forEach(e => { if (e.isIntersecting && !started) { started = true; obs.unobserve(e.target); type(); } });
     }, { threshold: 0.5 });
     obs.observe(h);
+  })();
+
+  // Machine à écrire — 2e ligne du hero (« à l'ère de l'IA. »)
+  (function() {
+    const em = document.querySelector('.hero-display em');
+    if (!em) return;
+    const h1 = em.closest('.hero-display');
+    if (h1) h1.setAttribute('aria-label', Array.prototype.map.call(h1.childNodes, n => n.textContent).join(' ').replace(/\s+/g, ' ').trim());
+    const full = em.textContent;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    em.setAttribute('aria-hidden', 'true');
+    em.textContent = '';
+    const caret = document.createElement('span');
+    caret.className = 'tw-caret';
+    caret.setAttribute('aria-hidden', 'true');
+    em.appendChild(caret);
+    let i = 0;
+    setTimeout(function step() {
+      if (i < full.length) {
+        caret.insertAdjacentText('beforebegin', full[i]); i++;
+        setTimeout(step, full[i - 1] === ' ' ? 45 : 70);
+      } else {
+        setTimeout(() => caret.remove(), 1600);
+      }
+    }, 500);
   })();
 
   // Menu burger mobile
