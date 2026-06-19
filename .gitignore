@@ -35,6 +35,7 @@
 # … et les assets de partage / favicon (favicon.svg est déjà suivi)
 !og-image.png
 !og-image-v2.png
+!og-image-v3.png
 !apple-touch-icon.png
 
 # Notes de projet (privées, ne doivent pas être publiques)
