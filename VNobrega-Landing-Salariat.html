@@ -1151,6 +1151,14 @@
   .sec-brown .spec-item .spec-num{ display:block; padding:0; color:var(--yellow); }
   .sec-brown .spec-item h3{ padding:0; color:var(--on-dark); font-size:26px; }
   .sec-brown .spec-item p{ padding:0; color:var(--on-dark-mut); }
+  /* Spécialités sur fond beige : mêmes cartes, texte foncé */
+  #specialites .spec-item{ background:transparent !important; border:none !important; border-radius:0; overflow:visible; padding:0; }
+  #specialites .spec-media{ position:relative; border-radius:10px; overflow:hidden; margin:0 0 18px; }
+  #specialites .spec-media .spec-img{ margin:0; border-radius:0; height:200px; }
+  #specialites .spec-media::after{ content:""; position:absolute; inset:0; pointer-events:none; background:rgba(54,41,31,0.30); mix-blend-mode:multiply; }
+  #specialites .spec-item .spec-num{ display:block; padding:0; color:var(--yellow-deep); }
+  #specialites .spec-item h3{ padding:0; color:var(--on-beige); font-size:26px; }
+  #specialites .spec-item p{ padding:0; color:var(--on-beige-mut); }
 
   /* OUTILS (marron) : sans cartes, logos clairs, ordre IA > Collab > Creation > Contenu */
   .sec-brown .app-cat{ background:transparent !important; border:none !important; border-radius:0; padding:0; }
@@ -1291,7 +1299,7 @@
   </div>
 </section>
 
-<section id="specialites" class="sec-brown">
+<section id="specialites" class="sec-beige">
   <div class="wrap">
     <div class="section-head">
       <span class="num">02</span>
