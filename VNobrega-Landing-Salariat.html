@@ -401,6 +401,18 @@
     .js #specialites .spec-grid.in-view .spec-item { animation: none; }
     .js #specialites .spec-media .spec-img { transform: none; transition: none; }
   }
+  /* Reveal en cascade des colonnes d'outils (section 03) */
+  .js #outils .app-cat { opacity: 0; }
+  .js #outils .app-grid.in-view .app-cat { animation: spec-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+  /* délais calés sur l'ordre visuel (les colonnes sont réordonnées via `order` sous .sec-brown) */
+  #outils .app-grid.in-view .app-cat:nth-child(3) { animation-delay: 0ms; }   /* IA — visuel 1 */
+  #outils .app-grid.in-view .app-cat:nth-child(4) { animation-delay: 130ms; } /* Collaboration — visuel 2 */
+  #outils .app-grid.in-view .app-cat:nth-child(1) { animation-delay: 260ms; } /* Création & design — visuel 3 */
+  #outils .app-grid.in-view .app-cat:nth-child(2) { animation-delay: 390ms; } /* Contenu & web — visuel 4 */
+  @media (prefers-reduced-motion: reduce) {
+    .js #outils .app-cat { opacity: 1; }
+    .js #outils .app-grid.in-view .app-cat { animation: none; }
+  }
   /* Machine à écrire — titre Contact */
   .tw-caret { display:inline-block; width:0.055em; height:0.95em; background:currentColor; margin-left:0.04em; vertical-align:-0.06em; animation: tw-blink 0.9s steps(1) infinite; }
   @keyframes tw-blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
@@ -1530,7 +1542,7 @@
   <div class="photo-strip">
     <div class="ps-track">
       <div class="ps-item"><img src="photos-action/act-dessin.jpg" alt="Conception éditoriale et création" loading="lazy"></div>
-      <div class="ps-item"><img src="photos-action/stock-salon.jpg" alt="Vanessa Nobrega — prise de parole en événement" loading="lazy"></div>
+      <div class="ps-item"><img src="photos-action/stock-salon-v2.jpg" alt="Vanessa Nobrega — prise de parole en événement" loading="lazy"></div>
       <div class="ps-item"><img src="photos-action/stock-conf.jpg" alt="Intervention en conférence" loading="lazy"></div>
       <div class="ps-item"><img src="photos-action/vn-duo.jpg" alt="Vanessa Nobrega — en collaboration" loading="lazy"></div>
       <div class="ps-item"><img src="photos-action/act-design.jpg" alt="Direction artistique et nuanciers" loading="lazy"></div>
@@ -1538,7 +1550,7 @@
       <div class="ps-item"><img src="photos-action/stock-talk.jpg" alt="Prise de parole et animation" loading="lazy"></div>
       <div class="ps-item"><img src="photos-action/vn-profil.jpg" alt="Vanessa Nobrega" loading="lazy"></div>
       <div class="ps-item"><img src="photos-action/act-dessin.jpg" alt="Conception éditoriale et création" loading="lazy"></div>
-      <div class="ps-item"><img src="photos-action/stock-salon.jpg" alt="Vanessa Nobrega — prise de parole en événement" loading="lazy"></div>
+      <div class="ps-item"><img src="photos-action/stock-salon-v2.jpg" alt="Vanessa Nobrega — prise de parole en événement" loading="lazy"></div>
       <div class="ps-item"><img src="photos-action/stock-conf.jpg" alt="Intervention en conférence" loading="lazy"></div>
       <div class="ps-item"><img src="photos-action/vn-duo.jpg" alt="Vanessa Nobrega — en collaboration" loading="lazy"></div>
       <div class="ps-item"><img src="photos-action/act-design.jpg" alt="Direction artistique et nuanciers" loading="lazy"></div>
@@ -1617,6 +1629,19 @@
   // Reveal en cascade des cartes Spécialités
   (function() {
     const target = document.querySelector('#specialites .spec-grid');
+    if (!target) return;
+    if (!('IntersectionObserver' in window)) { target.classList.add('in-view'); return; }
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('in-view'); obs.unobserve(entry.target); }
+      });
+    }, { threshold: 0.2 });
+    obs.observe(target);
+  })();
+
+  // Reveal en cascade des colonnes d'outils (section 03)
+  (function() {
+    const target = document.querySelector('#outils .app-grid');
     if (!target) return;
     if (!('IntersectionObserver' in window)) { target.classList.add('in-view'); return; }
     const obs = new IntersectionObserver((entries) => {
