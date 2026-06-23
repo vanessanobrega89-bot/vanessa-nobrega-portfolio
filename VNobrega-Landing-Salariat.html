@@ -954,16 +954,25 @@
 
   /* ===== EN ACTION STRIP ===== */
   .action-section { padding: 64px 0 80px; border-top: 1px solid var(--line); }
+  /* Fondu des bords : dégradés en overlay (vers le brun de la section) au lieu de mask-image,
+     qui fait disparaître le contenu sur iOS Safari. */
   .photo-strip {
     overflow: hidden;
-    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    position: relative;
   }
+  .photo-strip::before, .photo-strip::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 56px; z-index: 3; pointer-events: none;
+  }
+  .photo-strip::before { left: 0;  background: linear-gradient(to right, var(--brown), rgba(54,41,31,0)); }
+  .photo-strip::after  { right: 0; background: linear-gradient(to left,  var(--brown), rgba(54,41,31,0)); }
   .ps-track {
     display: flex;
     gap: 16px;
     width: max-content;
     animation: ps-scroll 48s linear infinite;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   .ps-track:hover { animation-play-state: paused; }
   .ps-item {
@@ -1251,7 +1260,7 @@
   .spec-img, .ps-item img{ filter:grayscale(1); }
   .ps-item img:hover{ filter:grayscale(1); }
   .action-section .ps-item{ position:relative; }
-  .action-section .ps-item::after{ content:""; position:absolute; inset:0; pointer-events:none; background:rgba(54,41,31,0.34); mix-blend-mode:multiply; }
+  .action-section .ps-item::after{ content:""; position:absolute; inset:0; pointer-events:none; background:rgba(54,41,31,0.34); }
 
   /* Formation & Langues (marron) : texte clair */
   #formation h3, #formation .item .t, #formation .lang .name{ color:var(--on-beige); }
