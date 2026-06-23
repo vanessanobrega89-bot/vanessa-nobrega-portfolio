@@ -686,8 +686,7 @@
     display: flex;
     flex-direction: column;
     gap: 28px;
-    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    position: relative;
   }
   .logo-track {
     display: flex;
@@ -731,15 +730,23 @@
   }
   .logo-marquee {
     overflow: hidden;
-    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    position: relative;
   }
+  /* Fondu des bords via dégradés overlay (iOS-safe) au lieu de mask-image */
+  .logo-marquee::before, .logo-marquee::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 8%; z-index: 3; pointer-events: none;
+  }
+  .logo-marquee::before { left: 0;  background: linear-gradient(to right, var(--brown), rgba(54,41,31,0)); }
+  .logo-marquee::after  { right: 0; background: linear-gradient(to left,  var(--brown), rgba(54,41,31,0)); }
   .logo-track {
     display: flex;
     align-items: center;
     gap: 72px;
     width: max-content;
     animation: marquee-left 36s linear infinite;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   .logo-track:hover { animation-play-state: paused; }
   .logo-item {
