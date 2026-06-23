@@ -1608,48 +1608,33 @@
     }, 1500);
   })();
 
-  // Stagger fade-in des hashtags Spécialités quand la section entre dans le viewport
+  // Reveals au scroll : hashtags Spécialités, cartes Spécialités, colonnes Outils.
+  // IMPORTANT : on démarre les observers APRÈS window.load (layout stable, images lazy chargées).
+  // Sinon, au premier rendu la page est plus courte (images pas encore décodées), les sections
+  // du bas remontent brièvement dans le viewport, l'observer se déclenche tout de suite et la
+  // classe "in-view" reste figée — d'où des animations qui jouent au chargement et plus au scroll.
   (function() {
-    const target = document.querySelector('.keywords-wrap');
-    if (!target || !('IntersectionObserver' in window)) {
-      if (target) target.classList.add('in-view');
-      return;
+    function revealOnScroll(selector) {
+      const target = document.querySelector(selector);
+      if (!target) return;
+      if (!('IntersectionObserver' in window)) { target.classList.add('in-view'); return; }
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); obs.unobserve(entry.target); }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
+      obs.observe(target);
     }
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    obs.observe(target);
-  })();
-
-  // Reveal en cascade des cartes Spécialités
-  (function() {
-    const target = document.querySelector('#specialites .spec-grid');
-    if (!target) return;
-    if (!('IntersectionObserver' in window)) { target.classList.add('in-view'); return; }
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('in-view'); obs.unobserve(entry.target); }
-      });
-    }, { threshold: 0.2 });
-    obs.observe(target);
-  })();
-
-  // Reveal en cascade des colonnes d'outils (section 03)
-  (function() {
-    const target = document.querySelector('#outils .app-grid');
-    if (!target) return;
-    if (!('IntersectionObserver' in window)) { target.classList.add('in-view'); return; }
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('in-view'); obs.unobserve(entry.target); }
-      });
-    }, { threshold: 0.2 });
-    obs.observe(target);
+    function init() {
+      revealOnScroll('.keywords-wrap');
+      revealOnScroll('#specialites .spec-grid');
+      revealOnScroll('#outils .app-grid');
+    }
+    if (document.readyState === 'complete') {
+      requestAnimationFrame(init);
+    } else {
+      window.addEventListener('load', function() { requestAnimationFrame(init); });
+    }
   })();
 
   // Machine à écrire — titre Contact
