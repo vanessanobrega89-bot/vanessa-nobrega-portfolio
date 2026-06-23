@@ -413,6 +413,19 @@
     .js #outils .app-cat { opacity: 1; }
     .js #outils .app-grid.in-view .app-cat { animation: none; }
   }
+  /* Reveal en cascade des lignes Formation & Langues (section 05) */
+  .js #formation .bloc > * { opacity: 0; }
+  .js #formation .two-col.in-view .bloc > * { animation: spec-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+  #formation .two-col.in-view .bloc > *:nth-child(1) { animation-delay: 0ms; }
+  #formation .two-col.in-view .bloc > *:nth-child(2) { animation-delay: 90ms; }
+  #formation .two-col.in-view .bloc > *:nth-child(3) { animation-delay: 180ms; }
+  #formation .two-col.in-view .bloc > *:nth-child(4) { animation-delay: 270ms; }
+  #formation .two-col.in-view .bloc > *:nth-child(5) { animation-delay: 360ms; }
+  #formation .two-col.in-view .bloc > *:nth-child(6) { animation-delay: 450ms; }
+  @media (prefers-reduced-motion: reduce) {
+    .js #formation .bloc > * { opacity: 1; }
+    .js #formation .two-col.in-view .bloc > * { animation: none; }
+  }
   /* Machine à écrire — titre Contact */
   .tw-caret { display:inline-block; width:0.055em; height:0.95em; background:currentColor; margin-left:0.04em; vertical-align:-0.06em; animation: tw-blink 0.9s steps(1) infinite; }
   @keyframes tw-blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
@@ -1629,6 +1642,7 @@
       revealOnScroll('.keywords-wrap');
       revealOnScroll('#specialites .spec-grid');
       revealOnScroll('#outils .app-grid');
+      revealOnScroll('#formation .two-col');
     }
     if (document.readyState === 'complete') {
       requestAnimationFrame(init);
