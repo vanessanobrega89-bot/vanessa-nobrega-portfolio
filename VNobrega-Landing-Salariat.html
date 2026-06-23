@@ -426,6 +426,14 @@
     .js #formation .bloc > * { opacity: 1; }
     .js #formation .two-col.in-view .bloc > * { animation: none; }
   }
+  /* Reveal de la frise Parcours (section 04) : chaque expérience glisse depuis la gauche */
+  @keyframes exp-slide { from { opacity: 0; transform: translateX(-32px); } to { opacity: 1; transform: translateX(0); } }
+  .js #parcours .exp { opacity: 0; }
+  .js #parcours .exp.in-view { animation: exp-slide 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+  @media (prefers-reduced-motion: reduce) {
+    .js #parcours .exp { opacity: 1; }
+    .js #parcours .exp.in-view { animation: none; }
+  }
   /* Machine à écrire — titre Contact */
   .tw-caret { display:inline-block; width:0.055em; height:0.95em; background:currentColor; margin-left:0.04em; vertical-align:-0.06em; animation: tw-blink 0.9s steps(1) infinite; }
   @keyframes tw-blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
@@ -1638,11 +1646,23 @@
       }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
       obs.observe(target);
     }
+    function revealEach(selector) {
+      const els = document.querySelectorAll(selector);
+      if (!els.length) return;
+      if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in-view')); return; }
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('in-view'); obs.unobserve(entry.target); }
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
+      els.forEach(e => obs.observe(e));
+    }
     function init() {
       revealOnScroll('.keywords-wrap');
       revealOnScroll('#specialites .spec-grid');
       revealOnScroll('#outils .app-grid');
       revealOnScroll('#formation .two-col');
+      revealEach('#parcours .exp');
     }
     if (document.readyState === 'complete') {
       requestAnimationFrame(init);
