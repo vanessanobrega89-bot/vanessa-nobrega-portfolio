@@ -43,8 +43,12 @@
   .intro{font-family:var(--sans);font-style:normal;font-size:19px;line-height:1.6;color:var(--muted);margin-top:24px;max-width:54ch;padding-left:22px;border-left:3px solid var(--accent)}
 
   .list{margin-top:54px}
-  .post{display:block;padding:32px 0;border-top:1px solid var(--line);transition:padding-left .25s}
-  .post:hover{padding-left:8px}
+  .post{display:flex;gap:30px;align-items:center;padding:30px 0;border-top:1px solid var(--line);transition:transform .25s}
+  .post:hover{transform:translateX(6px)}
+  .post-thumb{flex:0 0 230px}
+  .post-thumb img{display:block;width:230px;height:172px;object-fit:cover;border-radius:8px}
+  .post-body{flex:1;min-width:0}
+  @media (max-width:640px){ .post{flex-direction:column;align-items:stretch;gap:14px} .post-thumb{flex:none} .post-thumb img{width:100%;height:180px} }
   .post .cat{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
   .post h2{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.15;color:var(--brown);letter-spacing:-.01em;margin-bottom:10px}
   .post:hover h2{color:var(--accent-deep)}
@@ -72,24 +76,33 @@
   <div class="list">
 
     <a class="post" href="/articles/ia-communication-sans-perdre-incarnation">
-      <div class="cat">IA &amp; Contenus</div>
-      <h2>Augmenter sa com avec l'IA sans perdre son incarnation</h2>
-      <p>L'IA écrit vite, mais souvent « comme tout le monde ». Où placer le curseur entre vitesse et incarnation pour qu'elle serve votre voix au lieu de la lisser.</p>
-      <div class="meta">5 min de lecture <span class="arrow">Lire →</span></div>
+      <div class="post-thumb"><img src="/photos-action/art-cover-contenus.jpg" alt="Augmenter sa com avec l'IA" loading="lazy"></div>
+      <div class="post-body">
+        <div class="cat">IA &amp; Contenus</div>
+        <h2>Augmenter sa com avec l'IA sans perdre son incarnation</h2>
+        <p>L'IA écrit vite, mais souvent « comme tout le monde ». Où placer le curseur entre vitesse et incarnation pour qu'elle serve votre voix au lieu de la lisser.</p>
+        <div class="meta">5 min de lecture <span class="arrow">Lire →</span></div>
+      </div>
     </a>
 
     <a class="post" href="/articles/communication-innovation-par-ou-commencer">
-      <div class="cat">Communication d'innovation</div>
-      <h2>Communication d'innovation : par où commencer</h2>
-      <p>Vous avez une techno remarquable, mais le message ne prend pas ? La méthode en 5 étapes pour passer de l'abstrait à un récit clair et désirable.</p>
-      <div class="meta">6 min de lecture <span class="arrow">Lire →</span></div>
+      <div class="post-thumb"><img src="/photos-action/art-cover-innovation.jpg" alt="Communication d'innovation" loading="lazy"></div>
+      <div class="post-body">
+        <div class="cat">Communication d'innovation</div>
+        <h2>Communication d'innovation : par où commencer</h2>
+        <p>Vous avez une techno remarquable, mais le message ne prend pas ? La méthode en 5 étapes pour passer de l'abstrait à un récit clair et désirable.</p>
+        <div class="meta">6 min de lecture <span class="arrow">Lire →</span></div>
+      </div>
     </a>
 
     <a class="post" href="/articles/parler-ia-sans-jargon">
-      <div class="cat">IA &amp; Vulgarisation</div>
-      <h2>Parler d'IA sans jargon : 5 principes pour se faire comprendre</h2>
-      <p>On croit qu'il faut être technique pour être crédible sur l'IA. C'est l'inverse. Cinq principes pour rendre la tech claire et embarquer vos publics.</p>
-      <div class="meta">5 min de lecture <span class="arrow">Lire →</span></div>
+      <div class="post-thumb"><img src="/photos-action/art-cover-jargon.jpg" alt="Parler d'IA sans jargon" loading="lazy"></div>
+      <div class="post-body">
+        <div class="cat">IA &amp; Vulgarisation</div>
+        <h2>Parler d'IA sans jargon : 5 principes pour se faire comprendre</h2>
+        <p>On croit qu'il faut être technique pour être crédible sur l'IA. C'est l'inverse. Cinq principes pour rendre la tech claire et embarquer vos publics.</p>
+        <div class="meta">5 min de lecture <span class="arrow">Lire →</span></div>
+      </div>
     </a>
 
   </div>
