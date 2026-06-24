@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parler d'IA sans jargon : 5 principes pour se faire comprendre — Vanessa Nobrega</title>
+<meta name="description" content="Vulgariser l'IA sans jargon : 5 principes éprouvés pour rendre la tech claire et embarquer vos équipes, par une consultante en communication d'innovation.">
+<link rel="canonical" href="https://vanessanobrega.com/articles/parler-ia-sans-jargon">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<meta name="theme-color" content="#36291F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Parler d'IA sans jargon : 5 principes pour se faire comprendre">
+<meta property="og:description" content="Vulgariser l'IA sans jargon : 5 principes éprouvés pour rendre la tech claire et embarquer vos équipes.">
+<meta property="og:url" content="https://vanessanobrega.com/articles/parler-ia-sans-jargon">
+<meta property="og:image" content="https://vanessanobrega.com/og-image-v9.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://vanessanobrega.com/og-image-v9.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --display:'Cormorant Garamond',serif; --sans:'Inter',-apple-system,sans-serif; --mono:'JetBrains Mono',monospace;
+    --brown:#36291F; --beige:#ECE3D2; --paper:#F7F1E4; --ink:#2A2016; --muted:#6F6151;
+    --accent:#C16B3D; --accent-deep:#A8511F; --line:#DDD2BD; --on-dark:#EEE5D4; --on-dark-mut:#BCB199;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--beige);color:var(--ink);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none;transition:color .2s}
+  a:hover{color:var(--accent-deep)}
+
+  .lp-nav{display:flex;justify-content:space-between;align-items:center;padding:24px clamp(20px,5vw,64px);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(236,227,210,0.92);backdrop-filter:blur(8px);z-index:10}
+  .lp-logo{font-family:var(--display);font-weight:700;font-size:24px;color:var(--brown);letter-spacing:.01em}
+  .lp-logo:hover{color:var(--accent)}
+  .lp-back{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .lp-back:hover{color:var(--accent)}
+
+  .art{max-width:720px;margin:0 auto;padding:clamp(44px,7vw,80px) clamp(20px,5vw,40px) 40px}
+  .art-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+  .art h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,6vw,54px);line-height:1.08;letter-spacing:-.01em;color:var(--brown);margin-bottom:20px}
+  .art-meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);padding-bottom:30px;margin-bottom:36px;border-bottom:1px solid var(--line)}
+  .art-lead{font-size:21px;line-height:1.6;color:var(--ink);margin-bottom:30px;font-weight:400}
+  .art p{margin-bottom:20px;max-width:64ch}
+  .art h2{font-family:var(--display);font-weight:600;font-size:30px;letter-spacing:-.01em;color:var(--brown);margin:42px 0 14px}
+  .art h2 .n{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--accent);letter-spacing:.1em;display:block;margin-bottom:6px}
+  .art strong{font-weight:600;color:var(--ink)}
+  .art em{font-style:italic}
+  .art blockquote{margin:28px 0;padding:6px 0 6px 24px;border-left:3px solid var(--accent);font-family:var(--display);font-style:italic;font-size:23px;line-height:1.4;color:var(--brown)}
+
+  .art-cta{margin-top:54px;background:var(--brown);border-radius:14px;padding:36px 34px;color:var(--on-dark)}
+  .art-cta h3{font-family:var(--display);font-weight:600;font-size:26px;color:var(--on-dark);margin-bottom:10px}
+  .art-cta p{color:var(--on-dark-mut);max-width:none;margin-bottom:22px;font-size:16px}
+  .art-cta .btn{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;background:var(--accent);color:#FBF7EE;padding:14px 26px;border-radius:100px;transition:background .2s}
+  .art-cta .btn:hover{background:var(--accent-deep);color:#FBF7EE}
+
+  .art-more{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+  .lp-foot{border-top:1px solid var(--line);padding:28px clamp(20px,5vw,64px);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:720px;margin:40px auto 0}
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "headline":"Parler d'IA sans jargon : 5 principes pour se faire comprendre",
+  "description":"Vulgariser l'IA sans jargon : 5 principes éprouvés pour rendre la tech claire et embarquer vos équipes.",
+  "datePublished":"2026-06-24",
+  "dateModified":"2026-06-24",
+  "author":{"@type":"Person","name":"Vanessa Nobrega","url":"https://vanessanobrega.com"},
+  "publisher":{"@type":"Person","name":"Vanessa Nobrega"},
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://vanessanobrega.com/articles/parler-ia-sans-jargon"},
+  "image":"https://vanessanobrega.com/og-image-v9.png",
+  "inLanguage":"fr-FR"
+}
+</script>
+</head>
+<body>
+
+<header class="lp-nav">
+  <a href="/" class="lp-logo">VN</a>
+  <a href="/articles" class="lp-back">← Tous les articles</a>
+</header>
+
+<main class="art">
+  <p class="art-eyebrow">IA & Vulgarisation</p>
+  <h1>Parler d'IA sans jargon : 5 principes pour se faire comprendre</h1>
+  <p class="art-meta">5 min de lecture · Par Vanessa Nobrega</p>
+
+  <p class="art-lead">On croit souvent qu'il faut être technique pour être crédible sur l'intelligence artificielle. C'est l'inverse. La vraie difficulté n'est presque jamais l'IA elle-même — c'est la façon dont on en parle.</p>
+
+  <p>Pendant cinq ans, j'ai accompagné la sensibilisation de plus de 130&nbsp;000 personnes à l'IA : des dirigeants, des équipes, des étudiants, des élus, des curieux, à travers plus de 200 événements par an. Et la leçon la plus constante est celle-ci : dès qu'un discours sur l'IA devient inaccessible, il rate sa cible. On perd l'attention, on perd la confiance, et surtout on perd l'envie d'embarquer.</p>
+
+  <p>Le jargon n'impressionne pas : il exclut. Voici cinq principes pour parler d'IA clairement — sans la trahir, et sans perdre votre auditoire en route.</p>
+
+  <h2><span class="n">01</span>Partir du besoin, jamais de la techno</h2>
+  <p>La plupart des présentations sur l'IA commencent par le « comment » : le modèle, l'algorithme, l'architecture. Mais votre interlocuteur ne se réveille pas le matin en se demandant comment fonctionne un réseau de neurones. Il se demande comment gagner du temps, décider plus vite, ou soulager ses équipes.</p>
+  <p>Commencez toujours par le besoin et par ce que la technologie <strong>change concrètement</strong>. La mécanique interne ne vient qu'ensuite, et seulement si elle éclaire. Une bonne règle&nbsp;: si vous retiriez le nom de la techno de votre phrase, le bénéfice serait-il toujours clair&nbsp;? S'il disparaît, c'est que vous parliez d'outil, pas de valeur.</p>
+
+  <h2><span class="n">02</span>Traduire, sans déformer</h2>
+  <p>Vulgariser, c'est traduire&nbsp;: trouver l'image du quotidien qui fait comprendre une idée complexe en une seconde. Une analogie bien choisie vaut dix slides.</p>
+  <p>Mais attention au piège inverse&nbsp;: trop simplifier finit par mentir. L'art consiste à rendre accessible <em>sans</em> caricaturer ni survendre. Une bonne vulgarisation laisse l'auditeur plus juste, pas seulement rassuré. Si votre analogie donne l'impression que «&nbsp;l'IA pense comme un humain&nbsp;», elle a déformé plus qu'elle n'a éclairé.</p>
+
+  <h2><span class="n">03</span>Montrer plutôt qu'expliquer</h2>
+  <p>On comprend l'IA bien plus vite en la voyant qu'en l'écoutant décrire. Une démonstration de trente secondes, un avant/après, un exemple tiré du métier de la personne en face&nbsp;: voilà ce qui crée le déclic.</p>
+  <p>Chaque fois que c'est possible, remplacez une explication abstraite par une preuve concrète. Le concret désamorce l'intimidation&nbsp;: ce qui se voit cesse de faire peur.</p>
+
+  <h2><span class="n">04</span>Nommer les peurs au lieu de les contourner</h2>
+  <p>L'IA soulève des questions réelles&nbsp;: l'emploi, la perte de sens, le contrôle, la place de l'humain. Les ignorer ou les balayer d'un «&nbsp;ne vous inquiétez pas&nbsp;» ne rassure personne — au contraire, ça nourrit la méfiance.</p>
+  <p>La confiance se gagne par l'honnêteté. Nommez les inquiétudes, reconnaissez les limites, distinguez ce que la technologie sait faire de ce qu'elle ne sait pas. Un discours qui assume les zones d'ombre est infiniment plus crédible qu'un discours qui survend.</p>
+
+  <h2><span class="n">05</span>Incarner</h2>
+  <p>C'est le principe le plus important, et le plus oublié. Une technologie abstraite a besoin de visages, d'histoires, d'une voix. On ne s'attache pas à un concept&nbsp;: on s'attache à des gens, à des usages, à des récits.</p>
+  <p>Derrière chaque cas d'usage, il y a une personne dont le quotidien change. Racontez-la. C'est elle qui rendra l'IA tangible, désirable et humaine — pas la fiche technique.</p>
+
+  <blockquote>Vulgariser, ce n'est pas appauvrir. C'est rendre accessible ce qui mérite de l'être.</blockquote>
+
+  <p>Ces cinq principes ne demandent ni bagage technique, ni budget&nbsp;: ils demandent un changement de posture. Parler d'IA clairement, c'est accepter de servir la compréhension avant de servir la performance du discours. C'est exactement là que se joue la communication d'innovation.</p>
+
+  <div class="art-cta">
+    <h3>Besoin de rendre votre sujet IA clair et incarné ?</h3>
+    <p>J'accompagne les organisations et les équipes pour vulgariser la tech, structurer leurs prises de parole et embarquer leurs publics.</p>
+    <a class="btn" href="/#contact">Parlons-en →</a>
+  </div>
+
+  <p class="art-more"><a href="/articles">← Retour à tous les articles</a></p>
+</main>
+
+<footer class="lp-foot">
+  <span>© 2026 Vanessa Nobrega</span>
+  <span><a href="/">Accueil →</a></span>
+</footer>
+
+</body>
+</html>
