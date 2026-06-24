@@ -1213,6 +1213,21 @@
   #parcours .exp .desc{ color:var(--on-dark-mut); }
   #parcours .exp.featured ul li{ color:var(--on-dark-mut); }
   #parcours .exp.featured ul li::before{ color:var(--yellow); }
+  /* JOURNAL (accueil) : aperçu des articles sur fond brun */
+  #journal h2 em{ color:var(--yellow); }
+  .journal-list{ margin-top:12px; }
+  .journal-list .j-post{ display:block; padding:26px 0; border-top:1px solid rgba(238,229,212,0.15); text-decoration:none; transition:padding-left .25s ease; }
+  .journal-list .j-post:first-child{ border-top:none; }
+  .journal-list .j-cat{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:10px; }
+  .journal-list .j-title{ display:block; font-family:var(--display); font-weight:600; font-size:27px; line-height:1.15; letter-spacing:-0.01em; color:var(--on-dark); margin-bottom:8px; transition:color .2s; }
+  .journal-list .j-post:hover .j-title{ color:var(--yellow); }
+  .journal-list .j-meta{ display:block; font-family:var(--mono); font-size:12px; letter-spacing:0.06em; color:var(--on-dark-mut); }
+  .journal-list .j-meta .arrow{ color:var(--yellow); margin-left:6px; }
+  .j-all{ display:inline-block; margin-top:30px; font-family:var(--mono); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--yellow); text-decoration:none; border-bottom:1px solid rgba(193,107,61,0.45); padding-bottom:3px; transition:color .2s, border-color .2s; }
+  .j-all:hover{ color:var(--on-dark); border-color:var(--on-dark); }
+  .js #journal .j-post{ opacity:0; }
+  .js #journal .j-post.in-view{ animation:spec-rise 0.8s cubic-bezier(0.2,0.7,0.2,1) forwards; }
+  @media (prefers-reduced-motion: reduce){ .js #journal .j-post{ opacity:1; } .js #journal .j-post.in-view{ animation:none; } }
 
   /* OUTILS (marron) : sans cartes, logos clairs, ordre IA > Collab > Creation > Contenu */
   .sec-brown .app-cat{ background:transparent !important; border:none !important; border-radius:0; padding:0; }
@@ -1304,6 +1319,7 @@
       <a href="#specialites">Spécialités</a>
       <a href="#parcours">Parcours</a>
       <a href="#formation">Formation</a>
+      <a href="/articles">Journal</a>
       <a href="https://www.linkedin.com/in/vanessanobrega/" target="_blank" rel="noopener" class="nav-linkedin" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
       <a href="#contact" class="nav-cta">Contact</a>
     </div>
@@ -1556,10 +1572,38 @@
 </section>
 
 
-<section class="contact-section sec-beige" id="contact">
+<section id="journal" class="sec-brown">
   <div class="wrap">
     <div class="section-head">
       <span class="num">06</span>
+      <span class="label">Journal</span>
+    </div>
+    <h2>Regards sur la <em>communication &amp; l'IA.</em></h2>
+    <div class="journal-list">
+      <a class="j-post" href="/articles/ia-communication-sans-perdre-incarnation">
+        <span class="j-cat">IA &amp; Contenus</span>
+        <span class="j-title">Augmenter sa com avec l'IA sans perdre son incarnation</span>
+        <span class="j-meta">5 min de lecture <span class="arrow">Lire →</span></span>
+      </a>
+      <a class="j-post" href="/articles/communication-innovation-par-ou-commencer">
+        <span class="j-cat">Communication d'innovation</span>
+        <span class="j-title">Communication d'innovation : par où commencer</span>
+        <span class="j-meta">6 min de lecture <span class="arrow">Lire →</span></span>
+      </a>
+      <a class="j-post" href="/articles/parler-ia-sans-jargon">
+        <span class="j-cat">IA &amp; Vulgarisation</span>
+        <span class="j-title">Parler d'IA sans jargon : 5 principes pour se faire comprendre</span>
+        <span class="j-meta">5 min de lecture <span class="arrow">Lire →</span></span>
+      </a>
+    </div>
+    <a class="j-all" href="/articles">Voir tous les articles →</a>
+  </div>
+</section>
+
+<section class="contact-section sec-beige" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">07</span>
       <span class="label">Me contacter</span>
     </div>
     <h2>Parlons de <em>votre projet.</em></h2>
@@ -1690,6 +1734,7 @@
       revealOnScroll('#outils .app-grid');
       revealOnScroll('#formation .two-col');
       revealEach('#parcours .exp');
+      revealEach('#journal .j-post');
     }
     if (document.readyState === 'complete') {
       requestAnimationFrame(init);
