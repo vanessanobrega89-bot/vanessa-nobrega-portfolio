@@ -1850,5 +1850,18 @@
 <!-- Vercel Web Analytics — mesure d'audience sans cookie, RGPD-friendly -->
 <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<!-- Suivi d'événements : envoi du formulaire + clics LinkedIn -->
+<script>
+(function(){
+  function track(name){ try{ window.va && window.va('event',{name:name}); }catch(e){} }
+  document.addEventListener('DOMContentLoaded', function(){
+    var form = document.querySelector('.contact-form');
+    if(form){ form.addEventListener('submit', function(){ track('contact_envoi'); }); }
+    document.querySelectorAll('a[href*="linkedin.com"]').forEach(function(a){
+      a.addEventListener('click', function(){ track('clic_linkedin'); });
+    });
+  });
+})();
+</script>
 </body>
 </html>
