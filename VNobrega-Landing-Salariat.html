@@ -1213,18 +1213,18 @@
   #parcours .exp .desc{ color:var(--on-dark-mut); }
   #parcours .exp.featured ul li{ color:var(--on-dark-mut); }
   #parcours .exp.featured ul li::before{ color:var(--yellow); }
-  /* JOURNAL (accueil) : aperçu des articles sur fond brun */
-  #journal h2 em{ color:var(--yellow); }
+  /* JOURNAL (accueil) : aperçu des articles sur fond clair */
+  #journal h2 em{ color:var(--yellow-deep); }
   .journal-list{ margin-top:12px; }
-  .journal-list .j-post{ display:block; padding:26px 0; border-top:1px solid rgba(238,229,212,0.15); text-decoration:none; transition:padding-left .25s ease; }
+  .journal-list .j-post{ display:block; padding:26px 0; border-top:1px solid var(--line); text-decoration:none; transition:padding-left .25s ease; }
   .journal-list .j-post:first-child{ border-top:none; }
-  .journal-list .j-cat{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow); margin-bottom:10px; }
-  .journal-list .j-title{ display:block; font-family:var(--display); font-weight:600; font-size:27px; line-height:1.15; letter-spacing:-0.01em; color:var(--on-dark); margin-bottom:8px; transition:color .2s; }
-  .journal-list .j-post:hover .j-title{ color:var(--yellow); }
-  .journal-list .j-meta{ display:block; font-family:var(--mono); font-size:12px; letter-spacing:0.06em; color:var(--on-dark-mut); }
-  .journal-list .j-meta .arrow{ color:var(--yellow); margin-left:6px; }
-  .j-all{ display:inline-block; margin-top:30px; font-family:var(--mono); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--yellow); text-decoration:none; border-bottom:1px solid rgba(193,107,61,0.45); padding-bottom:3px; transition:color .2s, border-color .2s; }
-  .j-all:hover{ color:var(--on-dark); border-color:var(--on-dark); }
+  .journal-list .j-cat{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--yellow-deep); margin-bottom:10px; }
+  .journal-list .j-title{ display:block; font-family:var(--display); font-weight:600; font-size:27px; line-height:1.15; letter-spacing:-0.01em; color:var(--brown); margin-bottom:8px; transition:color .2s; }
+  .journal-list .j-post:hover .j-title{ color:var(--yellow-deep); }
+  .journal-list .j-meta{ display:block; font-family:var(--mono); font-size:12px; letter-spacing:0.06em; color:var(--on-beige-mut); }
+  .journal-list .j-meta .arrow{ color:var(--yellow-deep); margin-left:6px; }
+  .j-all{ display:inline-block; margin-top:30px; font-family:var(--mono); font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--yellow-deep); text-decoration:none; border-bottom:1px solid rgba(168,81,31,0.4); padding-bottom:3px; transition:color .2s, border-color .2s; }
+  .j-all:hover{ color:var(--brown); border-color:var(--brown); }
   .js #journal .j-post{ opacity:0; }
   .js #journal .j-post.in-view{ animation:spec-rise 0.8s cubic-bezier(0.2,0.7,0.2,1) forwards; }
   @media (prefers-reduced-motion: reduce){ .js #journal .j-post{ opacity:1; } .js #journal .j-post.in-view{ animation:none; } }
@@ -1572,35 +1572,10 @@
 </section>
 
 
-<section class="contact-section sec-beige" id="contact">
+<section id="journal" class="sec-beige">
   <div class="wrap">
     <div class="section-head">
       <span class="num">06</span>
-      <span class="label">Me contacter</span>
-    </div>
-    <h2>Parlons de <em>votre projet.</em></h2>
-    <p class="contact-intro">Un brief, une question, une envie de collaborer — écrivez-moi.</p>
-    <form class="contact-form" action="https://formsubmit.co/vanessa.nobrega89@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Nouveau message depuis votre site">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <div class="cf-row">
-        <input type="text" name="name" placeholder="Votre nom" required>
-        <input type="email" name="email" placeholder="Votre e-mail" required>
-      </div>
-      <textarea name="message" rows="4" placeholder="Votre message…" required></textarea>
-      <button type="submit" class="btn btn-primary">Envoyer <span class="arrow">→</span></button>
-    </form>
-    <div class="contact-row">
-      <a href="https://www.linkedin.com/in/vanessanobrega/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
-    </div>
-  </div>
-</section>
-
-<section id="journal" class="sec-brown">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="num">07</span>
       <span class="label">Journal</span>
     </div>
     <h2>Regards sur la <em>communication &amp; l'IA.</em></h2>
@@ -1622,6 +1597,31 @@
       </a>
     </div>
     <a class="j-all" href="/articles">Voir tous les articles →</a>
+  </div>
+</section>
+
+<section class="contact-section sec-brown" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">07</span>
+      <span class="label">Me contacter</span>
+    </div>
+    <h2>Parlons de <em>votre projet.</em></h2>
+    <p class="contact-intro">Un brief, une question, une envie de collaborer — écrivez-moi.</p>
+    <form class="contact-form" action="https://formsubmit.co/vanessa.nobrega89@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Nouveau message depuis votre site">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <div class="cf-row">
+        <input type="text" name="name" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre e-mail" required>
+      </div>
+      <textarea name="message" rows="4" placeholder="Votre message…" required></textarea>
+      <button type="submit" class="btn btn-primary">Envoyer <span class="arrow">→</span></button>
+    </form>
+    <div class="contact-row">
+      <a href="https://www.linkedin.com/in/vanessanobrega/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
+    </div>
   </div>
 </section>
 <section class="action-section sec-brown">
