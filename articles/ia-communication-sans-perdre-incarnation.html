@@ -1,101 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Augmenter sa com avec l'IA sans perdre son identité — Vanessa Nobrega</title>
-<meta name="description" content="Utiliser l'IA en communication sans perdre votre voix : où placer le curseur entre vitesse et incarnation. Le point de vue d'une consultante com & IA.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Augmenter sa com avec l&#x27;IA sans perdre son identité | Vanessa Nobrega</title>
+<meta name="description" content="Utiliser l&#x27;IA en communication sans perdre votre voix : où placer le curseur entre vitesse et incarnation. Le point de vue d&#x27;une consultante communication.">
 <link rel="canonical" href="https://vanessanobrega.com/articles/ia-communication-sans-perdre-incarnation">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
-<meta name="theme-color" content="#36291F">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Augmenter sa com avec l'IA sans perdre son identité">
-<meta property="og:description" content="Où placer le curseur entre vitesse et incarnation quand on utilise l'IA en communication.">
+<meta property="og:title" content="Augmenter sa com avec l&#x27;IA sans perdre son identité">
+<meta property="og:description" content="Utiliser l&#x27;IA en communication sans perdre votre voix : où placer le curseur entre vitesse et incarnation. Le point de vue d&#x27;une consultante communication.">
 <meta property="og:url" content="https://vanessanobrega.com/articles/ia-communication-sans-perdre-incarnation">
-<meta property="og:image" content="https://vanessanobrega.com/og-image-v10.png">
+<meta property="og:image" content="https://vanessanobrega.com/og-image-v11.png">
+<meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://vanessanobrega.com/og-image-v10.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --display:'Cormorant Garamond',serif; --sans:'Inter',-apple-system,sans-serif; --mono:'JetBrains Mono',monospace;
-    --brown:#36291F; --beige:#ECE3D2; --paper:#F7F1E4; --ink:#2A2016; --muted:#6F6151;
-    --accent:#C16B3D; --accent-deep:#A8511F; --line:#DDD2BD; --on-dark:#EEE5D4; --on-dark-mut:#BCB199;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);background:var(--beige);color:var(--ink);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;transition:color .2s}
-  a:hover{color:var(--accent-deep)}
+:root{--bg:#fff;--bg2:#f0f3fc;--ink:#0b0b0f;--ink2:#4c4f5c;--line:rgba(11,11,15,.12);--accent:#1f3fd1;--pad:clamp(20px,4.5vw,64px);--display:"Barlow Semi Condensed",sans-serif;--body:"Barlow",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:300 18px/1.7 var(--body);-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#fff}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav div{max-width:1360px;margin:0 auto;padding:0 var(--pad);height:68px;display:flex;justify-content:space-between;align-items:center}
+.nav a{text-decoration:none;font-size:15px}
+.nav .brand{font-weight:500}
+.nav .links{display:flex;gap:28px}
+.wrap{max-width:760px;margin:0 auto;padding:0 var(--pad)}
+header.art{padding:clamp(56px,8vw,110px) 0 clamp(32px,4vw,48px)}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--ink2);text-decoration:none;margin-bottom:40px}
+.back svg,.cta a svg{width:15px;height:15px}
+.cat{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(2.3rem,5vw,3.9rem);line-height:1;letter-spacing:-.005em;text-wrap:balance;margin-bottom:24px}
+.meta{font-size:14.5px;color:var(--ink2)}
+article.body{padding-bottom:40px}
+article.body > p:first-child{font-size:1.2em;line-height:1.6;color:var(--ink)}
+article.body p{margin:0 0 1.15em;text-wrap:pretty}
+article.body h2{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.05;margin:2.2em 0 .7em;text-wrap:balance}
+article.body h3{font-family:var(--display);font-weight:600;font-size:1.3rem;line-height:1.2;margin:1.6em 0 .5em}
+article.body ul,article.body ol{margin:0 0 1.3em 1.2em}
+article.body li{margin-bottom:.45em;padding-left:.2em}
+article.body li::marker{color:var(--accent)}
+article.body a{color:var(--accent)}
+article.body strong{font-weight:500}
+.author{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink2)}
+.sources{margin:28px 0 0;font-size:14px;color:var(--ink2)}
+.sources h2{font-family:var(--body);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:10px;color:var(--ink2)}
+.sources ul{list-style:none;display:grid;gap:6px}
+.sources a{color:var(--ink2)}
+.cta{background:var(--accent);color:#fff;margin-top:clamp(56px,8vw,96px);padding:clamp(48px,7vw,88px) 0}
+.cta h2{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1;margin-bottom:18px}
+.cta p{color:#dfe5fb;margin-bottom:28px;max-width:46ch}
+.cta a{display:inline-flex;align-items:center;gap:.6em;background:#fff;color:var(--accent);text-decoration:none;font-weight:500;font-size:16px;border-radius:999px;padding:14px 22px}
+footer{padding:28px 0 36px;font-size:14px;color:var(--ink2)}
+footer div{max-width:1360px;margin:0 auto;padding:0 var(--pad);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (max-width:640px){.nav .links{gap:18px}.nav .links a:not(:last-child){display:none}body{font-size:17px}}
 
-  .lp-nav{display:flex;justify-content:space-between;align-items:center;padding:24px clamp(20px,5vw,64px);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(236,227,210,0.92);backdrop-filter:blur(8px);z-index:10}
-  .lp-logo{font-family:var(--display);font-weight:700;font-size:24px;color:var(--brown);letter-spacing:.01em}
-  .lp-logo:hover{color:var(--accent)}
-  .lp-back{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  .lp-back:hover{color:var(--accent)}
-
-  .art{max-width:720px;margin:0 auto;padding:clamp(44px,7vw,80px) clamp(20px,5vw,40px) 40px}
-  .art-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-  .art h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,6vw,54px);line-height:1.08;letter-spacing:-.01em;color:var(--brown);margin-bottom:20px}
-  .art-meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);padding-bottom:30px;margin-bottom:36px;border-bottom:1px solid var(--line)}
-  .art-lead{font-size:21px;line-height:1.6;color:var(--ink);margin-bottom:30px;font-weight:400}
-  .art p{margin-bottom:20px;max-width:64ch}
-  .art h2{font-family:var(--display);font-weight:600;font-size:30px;letter-spacing:-.01em;color:var(--brown);margin:42px 0 14px}
-  .art h2 .n{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--accent);letter-spacing:.1em;display:block;margin-bottom:6px}
-  .art strong{font-weight:600;color:var(--ink)}
-  .art em{font-style:italic}
-  .art ul{margin:0 0 20px;padding-left:0;list-style:none;max-width:64ch}
-  .art li{position:relative;padding-left:24px;margin-bottom:14px}
-  .art li::before{content:'—';position:absolute;left:0;color:var(--accent)}
-  .art blockquote{margin:28px 0;padding:6px 0 6px 24px;border-left:3px solid var(--accent);font-family:var(--display);font-style:italic;font-size:23px;line-height:1.4;color:var(--brown)}
-
-  .art-cta{margin-top:54px;background:var(--brown);border-radius:14px;padding:36px 34px;color:var(--on-dark)}
-  .art-cta h3{font-family:var(--display);font-weight:600;font-size:26px;color:var(--on-dark);margin-bottom:10px}
-  .art-cta p{color:var(--on-dark-mut);max-width:none;margin-bottom:22px;font-size:16px}
-  .art-cta .btn{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;background:var(--accent);color:#FBF7EE;padding:14px 26px;border-radius:100px;transition:background .2s}
-  .art-cta .btn:hover{background:var(--accent-deep);color:#FBF7EE}
-
-  .art-more{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-  .lp-foot{border-top:1px solid var(--line);padding:28px clamp(20px,5vw,64px);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:720px;margin:40px auto 0}
+article.body h2 .n{display:block;font-family:var(--body);font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+article.body blockquote{margin:2em 0;padding:4px 0 4px 24px;border-left:1px solid var(--accent);font-family:var(--display);font-weight:600;font-size:clamp(1.4rem,2.4vw,1.8rem);line-height:1.2;color:var(--ink)}
+article.body section{margin-bottom:8px}
 </style>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"Augmenter sa com avec l'IA sans perdre son identité",
-  "description":"Où placer le curseur entre vitesse et incarnation quand on utilise l'IA en communication.",
-  "datePublished":"2026-06-24",
-  "dateModified":"2026-06-24",
-  "author":{"@type":"Person","name":"Vanessa Nobrega","url":"https://vanessanobrega.com"},
-  "publisher":{"@type":"Person","name":"Vanessa Nobrega"},
-  "mainEntityOfPage":{"@type":"WebPage","@id":"https://vanessanobrega.com/articles/ia-communication-sans-perdre-incarnation"},
-  "image":"https://vanessanobrega.com/og-image-v10.png",
-  "inLanguage":"fr-FR"
-}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Augmenter sa com avec l'IA sans perdre son identité", "description": "Utiliser l'IA en communication sans perdre votre voix : où placer le curseur entre vitesse et incarnation. Le point de vue d'une consultante communication.", "datePublished": "2026-06-24", "dateModified": "2026-11-16", "inLanguage": "fr-FR", "mainEntityOfPage": "https://vanessanobrega.com/articles/ia-communication-sans-perdre-incarnation", "author": {"@type": "Person", "name": "Vanessa Nobrega", "url": "https://vanessanobrega.com/"}, "image": "https://vanessanobrega.com/og-image-v11.png"}</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-
-<header class="lp-nav">
-  <a href="/" class="lp-logo">VN</a>
-  <a href="/articles" class="lp-back">← Tous les articles</a>
-</header>
-
-<main class="art">
-  <p class="art-eyebrow">IA & Contenus</p>
-  <h1>Augmenter sa com avec l'IA sans perdre son identité</h1>
-  <p class="art-meta">5 min de lecture · Par Vanessa Nobrega</p>
-
-  <p class="art-lead">L'IA peut écrire un post en dix secondes. La vraie question n'est pas de savoir si on peut l'utiliser, mais comment l'utiliser sans sonner comme tout le monde.</p>
+<header class="nav"><div><a class="brand" href="/">Vanessa Nobrega</a><nav class="links" aria-label="Navigation"><a href="/#offres">Offres</a><a href="/articles">Journal</a><a href="/#contact">Contact</a></nav></div></header>
+<main>
+  <div class="wrap">
+    <header class="art">
+      <a class="back" href="/articles"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M14 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.4"/></svg> Tous les articles</a>
+      <span class="cat">IA et Contenus</span>
+      <h1>Augmenter sa com avec l&#x27;IA sans perdre son identité</h1>
+      <p class="meta">Par Vanessa Nobrega <span aria-hidden="true">&nbsp;&nbsp;</span> <time datetime="2026-06-24">Juin 2026</time> <span aria-hidden="true">&nbsp;&nbsp;</span> 5 min de lecture</p>
+    </header>
+    <article class="body">
+<p>L'IA peut écrire un post en dix secondes. La vraie question n'est pas de savoir si on peut l'utiliser, mais comment l'utiliser sans sonner comme tout le monde.</p>
 
   <p>Le risque de l'IA en communication n'est pas qu'elle écrive mal. C'est qu'elle écrive <em>correct</em>, et partout pareil. Une com lissée, moyenne, sans aspérité ni point de vue. Or ce qui distingue, en communication, c'est justement l'incarnation&nbsp;: une voix, un angle, une présence.</p>
 
-  <p>La bonne nouvelle, c'est que bien utilisée, l'IA n'efface pas votre singularité&nbsp;: elle l'amplifie. Tout est une question de curseur.</p>
+  <p>Bien utilisée, l'IA n'efface pas votre singularité&nbsp;: elle l'amplifie. Tout est une question de curseur.</p>
 
-  <h2><span class="n">01</span>Ce que l'IA fait très bien</h2>
+  <h2><span class="n">1</span>Ce que l'IA fait très bien</h2>
   <p>Comme assistante de production, elle fait gagner un temps précieux sur la matière première&nbsp;:</p>
   <ul>
     <li><strong>Déblayer la page blanche</strong>&nbsp;: premiers jets, plans, angles à explorer.</li>
@@ -105,7 +96,7 @@
   </ul>
   <p>Sur ce terrain, elle travaille pour vous. Elle prend en charge la quantité et la vitesse, pour que vous gardiez votre énergie là où elle compte vraiment.</p>
 
-  <h2><span class="n">02</span>Ce qu'elle ne doit pas faire à votre place</h2>
+  <h2><span class="n">2</span>Ce qu'elle ne doit pas faire à votre place</h2>
   <p>En revanche, tout ce qui fait que c'est <strong>vous</strong> qui parlez ne se délègue pas&nbsp;:</p>
   <ul>
     <li><strong>Le sens</strong>&nbsp;: pourquoi vous prenez la parole, ce que vous défendez.</li>
@@ -114,11 +105,11 @@
     <li><strong>L'incarnation</strong>&nbsp;: vos histoires, vos exemples, votre vécu, que l'IA n'a pas.</li>
   </ul>
 
-  <h2><span class="n">03</span>Où placer le curseur</h2>
+  <h2><span class="n">3</span>Où placer le curseur</h2>
   <p>Ma règle tient en une ligne&nbsp;: <strong>l'IA pour la matière, vous pour le jugement.</strong> Laissez-la produire des brouillons, des options, des angles. Puis reprenez la main sur l'essentiel&nbsp;: choisir, couper, réécrire dans votre voix, ajouter ce que la machine ne peut pas inventer, c'est-à-dire votre expérience.</p>
-  <p>Le brouillon peut venir de la machine&nbsp;; la version finale, elle, doit porter votre signature. Si, en vous relisant, vous ne reconnaissez pas votre voix, c'est que le curseur est allé trop loin.</p>
+  <p>Le brouillon peut venir de la machine. La version finale, elle, doit porter votre signature. Si, en vous relisant, vous ne reconnaissez pas votre voix, c'est que le curseur est allé trop loin.</p>
 
-  <h2><span class="n">04</span>Les garde-fous</h2>
+  <h2><span class="n">4</span>Les garde-fous</h2>
   <ul>
     <li><strong>Vérifiez les faits.</strong> L'IA invente avec aplomb. Aucun chiffre, citation ou source ne devrait être publié sans vérification. Votre crédibilité en dépend.</li>
     <li><strong>Gardez votre signature.</strong> Réécrivez les formulations génériques et le vocabulaire «&nbsp;IA&nbsp;» reconnaissable. Le lissage se repère, et il coûte cher en confiance.</li>
@@ -127,21 +118,18 @@
 
   <blockquote>Je ne demande pas à l'IA de me remplacer. Je lui demande de me dégager du temps pour ce qui compte vraiment.</blockquote>
 
-  <p>En déléguant la matière, vous libérez du temps pour ce qui ne se délègue pas&nbsp;: penser, incarner, décider. C'est tout le sens de ma façon de travailler&nbsp;: une communication claire, incarnée, et <em>augmentée</em> par l'IA. Augmentée, pas automatisée. Le même principe vaut pour <a href="/articles/communication-innovation-par-ou-commencer">toute communication d'innovation</a>&nbsp;: la technologie reste un levier, jamais une fin.</p>
-
-  <div class="art-cta">
-    <h3>Envie d'intégrer l'IA à votre com sans perdre votre voix ?</h3>
-    <p>J'accompagne les équipes et les indépendants pour mettre l'IA au service de leurs contenus, avec méthode, sans perdre ce qui fait leur singularité.</p>
-    <a class="btn" href="/#contact">Parlons-en →</a>
+  <p>En déléguant la matière, vous libérez du temps pour ce qui ne se délègue pas&nbsp;: penser, incarner, décider. C'est ma façon de travailler : l'IA comme outil, au service d'une communication claire et incarnée. Le même principe vaut pour <a href="/articles/communication-innovation-par-ou-commencer">toute communication d'innovation</a>&nbsp;: la technologie reste un levier, jamais une fin.</p>
+      <p class="author">Par Vanessa Nobrega, consultante en communication et image de marque à Nice.</p>
+    </article>
   </div>
-
-  <p class="art-more"><a href="/articles">← Retour à tous les articles</a></p>
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="wrap">
+      <h2 id="cta-title">Parlons de votre projet.</h2>
+      <p>Un brief, une question, une idée de mission. Écrivez-moi, je vous réponds rapidement.</p>
+      <a href="/#contact">Me contacter <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></a>
+    </div>
+  </section>
 </main>
-
-<footer class="lp-foot">
-  <span>© 2026 Vanessa Nobrega</span>
-  <span><a href="/">Accueil →</a></span>
-</footer>
-
+<footer><div><span>© 2026 Vanessa Nobrega</span><span><a href="/mentions-legales">Mentions légales</a></span></div></footer>
 </body>
 </html>

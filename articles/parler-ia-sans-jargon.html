@@ -1,134 +1,125 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parler d'IA sans jargon : 5 principes pour se faire comprendre — Vanessa Nobrega</title>
-<meta name="description" content="Vulgariser l'IA sans jargon : 5 principes éprouvés pour rendre la tech claire et embarquer vos équipes, par une consultante en communication d'innovation.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parler d&#x27;IA sans jargon : 5 principes pour se faire comprendre | Vanessa Nobrega</title>
+<meta name="description" content="Vulgariser l&#x27;IA sans jargon : 5 principes éprouvés pour rendre la tech claire et embarquer vos équipes, par une consultante en communication d&#x27;innovation.">
 <link rel="canonical" href="https://vanessanobrega.com/articles/parler-ia-sans-jargon">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
-<meta name="theme-color" content="#36291F">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Parler d'IA sans jargon : 5 principes pour se faire comprendre">
-<meta property="og:description" content="Vulgariser l'IA sans jargon : 5 principes éprouvés pour rendre la tech claire et embarquer vos équipes.">
+<meta property="og:title" content="Parler d&#x27;IA sans jargon : 5 principes pour se faire comprendre">
+<meta property="og:description" content="Vulgariser l&#x27;IA sans jargon : 5 principes éprouvés pour rendre la tech claire et embarquer vos équipes, par une consultante en communication d&#x27;innovation.">
 <meta property="og:url" content="https://vanessanobrega.com/articles/parler-ia-sans-jargon">
-<meta property="og:image" content="https://vanessanobrega.com/og-image-v10.png">
+<meta property="og:image" content="https://vanessanobrega.com/og-image-v11.png">
+<meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://vanessanobrega.com/og-image-v10.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --display:'Cormorant Garamond',serif; --sans:'Inter',-apple-system,sans-serif; --mono:'JetBrains Mono',monospace;
-    --brown:#36291F; --beige:#ECE3D2; --paper:#F7F1E4; --ink:#2A2016; --muted:#6F6151;
-    --accent:#C16B3D; --accent-deep:#A8511F; --line:#DDD2BD; --on-dark:#EEE5D4; --on-dark-mut:#BCB199;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);background:var(--beige);color:var(--ink);line-height:1.7;font-size:17px;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;transition:color .2s}
-  a:hover{color:var(--accent-deep)}
+:root{--bg:#fff;--bg2:#f0f3fc;--ink:#0b0b0f;--ink2:#4c4f5c;--line:rgba(11,11,15,.12);--accent:#1f3fd1;--pad:clamp(20px,4.5vw,64px);--display:"Barlow Semi Condensed",sans-serif;--body:"Barlow",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:300 18px/1.7 var(--body);-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#fff}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav div{max-width:1360px;margin:0 auto;padding:0 var(--pad);height:68px;display:flex;justify-content:space-between;align-items:center}
+.nav a{text-decoration:none;font-size:15px}
+.nav .brand{font-weight:500}
+.nav .links{display:flex;gap:28px}
+.wrap{max-width:760px;margin:0 auto;padding:0 var(--pad)}
+header.art{padding:clamp(56px,8vw,110px) 0 clamp(32px,4vw,48px)}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--ink2);text-decoration:none;margin-bottom:40px}
+.back svg,.cta a svg{width:15px;height:15px}
+.cat{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(2.3rem,5vw,3.9rem);line-height:1;letter-spacing:-.005em;text-wrap:balance;margin-bottom:24px}
+.meta{font-size:14.5px;color:var(--ink2)}
+article.body{padding-bottom:40px}
+article.body > p:first-child{font-size:1.2em;line-height:1.6;color:var(--ink)}
+article.body p{margin:0 0 1.15em;text-wrap:pretty}
+article.body h2{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.05;margin:2.2em 0 .7em;text-wrap:balance}
+article.body h3{font-family:var(--display);font-weight:600;font-size:1.3rem;line-height:1.2;margin:1.6em 0 .5em}
+article.body ul,article.body ol{margin:0 0 1.3em 1.2em}
+article.body li{margin-bottom:.45em;padding-left:.2em}
+article.body li::marker{color:var(--accent)}
+article.body a{color:var(--accent)}
+article.body strong{font-weight:500}
+.author{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink2)}
+.sources{margin:28px 0 0;font-size:14px;color:var(--ink2)}
+.sources h2{font-family:var(--body);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:10px;color:var(--ink2)}
+.sources ul{list-style:none;display:grid;gap:6px}
+.sources a{color:var(--ink2)}
+.cta{background:var(--accent);color:#fff;margin-top:clamp(56px,8vw,96px);padding:clamp(48px,7vw,88px) 0}
+.cta h2{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1;margin-bottom:18px}
+.cta p{color:#dfe5fb;margin-bottom:28px;max-width:46ch}
+.cta a{display:inline-flex;align-items:center;gap:.6em;background:#fff;color:var(--accent);text-decoration:none;font-weight:500;font-size:16px;border-radius:999px;padding:14px 22px}
+footer{padding:28px 0 36px;font-size:14px;color:var(--ink2)}
+footer div{max-width:1360px;margin:0 auto;padding:0 var(--pad);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (max-width:640px){.nav .links{gap:18px}.nav .links a:not(:last-child){display:none}body{font-size:17px}}
 
-  .lp-nav{display:flex;justify-content:space-between;align-items:center;padding:24px clamp(20px,5vw,64px);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(236,227,210,0.92);backdrop-filter:blur(8px);z-index:10}
-  .lp-logo{font-family:var(--display);font-weight:700;font-size:24px;color:var(--brown);letter-spacing:.01em}
-  .lp-logo:hover{color:var(--accent)}
-  .lp-back{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  .lp-back:hover{color:var(--accent)}
-
-  .art{max-width:720px;margin:0 auto;padding:clamp(44px,7vw,80px) clamp(20px,5vw,40px) 40px}
-  .art-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-  .art h1{font-family:var(--display);font-weight:600;font-size:clamp(34px,6vw,54px);line-height:1.08;letter-spacing:-.01em;color:var(--brown);margin-bottom:20px}
-  .art-meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);padding-bottom:30px;margin-bottom:36px;border-bottom:1px solid var(--line)}
-  .art-lead{font-size:21px;line-height:1.6;color:var(--ink);margin-bottom:30px;font-weight:400}
-  .art p{margin-bottom:20px;max-width:64ch}
-  .art h2{font-family:var(--display);font-weight:600;font-size:30px;letter-spacing:-.01em;color:var(--brown);margin:42px 0 14px}
-  .art h2 .n{font-family:var(--mono);font-size:14px;font-weight:500;color:var(--accent);letter-spacing:.1em;display:block;margin-bottom:6px}
-  .art strong{font-weight:600;color:var(--ink)}
-  .art em{font-style:italic}
-  .art blockquote{margin:28px 0;padding:6px 0 6px 24px;border-left:3px solid var(--accent);font-family:var(--display);font-style:italic;font-size:23px;line-height:1.4;color:var(--brown)}
-
-  .art-cta{margin-top:54px;background:var(--brown);border-radius:14px;padding:36px 34px;color:var(--on-dark)}
-  .art-cta h3{font-family:var(--display);font-weight:600;font-size:26px;color:var(--on-dark);margin-bottom:10px}
-  .art-cta p{color:var(--on-dark-mut);max-width:none;margin-bottom:22px;font-size:16px}
-  .art-cta .btn{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;background:var(--accent);color:#FBF7EE;padding:14px 26px;border-radius:100px;transition:background .2s}
-  .art-cta .btn:hover{background:var(--accent-deep);color:#FBF7EE}
-
-  .art-more{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-  .lp-foot{border-top:1px solid var(--line);padding:28px clamp(20px,5vw,64px);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:720px;margin:40px auto 0}
+article.body h2 .n{display:block;font-family:var(--body);font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+article.body blockquote{margin:2em 0;padding:4px 0 4px 24px;border-left:1px solid var(--accent);font-family:var(--display);font-weight:600;font-size:clamp(1.4rem,2.4vw,1.8rem);line-height:1.2;color:var(--ink)}
+article.body section{margin-bottom:8px}
 </style>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "headline":"Parler d'IA sans jargon : 5 principes pour se faire comprendre",
-  "description":"Vulgariser l'IA sans jargon : 5 principes éprouvés pour rendre la tech claire et embarquer vos équipes.",
-  "datePublished":"2026-06-24",
-  "dateModified":"2026-06-24",
-  "author":{"@type":"Person","name":"Vanessa Nobrega","url":"https://vanessanobrega.com"},
-  "publisher":{"@type":"Person","name":"Vanessa Nobrega"},
-  "mainEntityOfPage":{"@type":"WebPage","@id":"https://vanessanobrega.com/articles/parler-ia-sans-jargon"},
-  "image":"https://vanessanobrega.com/og-image-v10.png",
-  "inLanguage":"fr-FR"
-}
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Parler d'IA sans jargon : 5 principes pour se faire comprendre", "description": "Vulgariser l'IA sans jargon : 5 principes éprouvés pour rendre la tech claire et embarquer vos équipes, par une consultante en communication d'innovation.", "datePublished": "2026-06-24", "dateModified": "2026-11-16", "inLanguage": "fr-FR", "mainEntityOfPage": "https://vanessanobrega.com/articles/parler-ia-sans-jargon", "author": {"@type": "Person", "name": "Vanessa Nobrega", "url": "https://vanessanobrega.com/"}, "image": "https://vanessanobrega.com/og-image-v11.png"}</script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-
-<header class="lp-nav">
-  <a href="/" class="lp-logo">VN</a>
-  <a href="/articles" class="lp-back">← Tous les articles</a>
-</header>
-
-<main class="art">
-  <p class="art-eyebrow">IA & Vulgarisation</p>
-  <h1>Parler d'IA sans jargon : 5 principes pour se faire comprendre</h1>
-  <p class="art-meta">5 min de lecture · Par Vanessa Nobrega</p>
-
-  <p class="art-lead">On pense souvent qu'il faut être très technique pour être crédible sur l'intelligence artificielle. Mon expérience dit l'inverse. La vraie difficulté n'est presque jamais l'IA en elle-même, mais la manière d'en parler.</p>
+<header class="nav"><div><a class="brand" href="/">Vanessa Nobrega</a><nav class="links" aria-label="Navigation"><a href="/#offres">Offres</a><a href="/articles">Journal</a><a href="/#contact">Contact</a></nav></div></header>
+<main>
+  <div class="wrap">
+    <header class="art">
+      <a class="back" href="/articles"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M14 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.4"/></svg> Tous les articles</a>
+      <span class="cat">IA et Vulgarisation</span>
+      <h1>Parler d&#x27;IA sans jargon : 5 principes pour se faire comprendre</h1>
+      <p class="meta">Par Vanessa Nobrega <span aria-hidden="true">&nbsp;&nbsp;</span> <time datetime="2026-06-24">Juin 2026</time> <span aria-hidden="true">&nbsp;&nbsp;</span> 5 min de lecture</p>
+    </header>
+    <article class="body">
+<p>On pense souvent qu'il faut être très technique pour être crédible sur l'intelligence artificielle. Mon expérience dit l'inverse. La vraie difficulté n'est presque jamais l'IA en elle-même, mais la manière d'en parler.</p>
 
   <p>En cinq ans, j'ai accompagné la sensibilisation de plus de 130&nbsp;000 personnes à l'IA&nbsp;: des dirigeants, des équipes, des étudiants, des élus, beaucoup de curieux aussi, au fil de plus de 200 événements par an. Ce que j'en retiens tient en une phrase&nbsp;: quand un discours sur l'IA devient inaccessible, il rate sa cible. On perd l'attention, la confiance, et l'envie de suivre.</p>
 
   <p>Le jargon ne donne pas l'air savant, il met à distance. Voici cinq principes que j'applique au quotidien pour parler d'IA clairement, sans pour autant la trahir.</p>
 
-  <h2><span class="n">01</span>Partir du besoin, jamais de la techno</h2>
+  <h2><span class="n">1</span>Partir du besoin, jamais de la techno</h2>
   <p>La plupart des présentations sur l'IA s'ouvrent sur le «&nbsp;comment&nbsp;»&nbsp;: le modèle, l'algorithme, l'architecture. Sauf que votre interlocuteur ne se demande pas comment fonctionne un réseau de neurones. Il se demande comment gagner du temps, décider plus sereinement, ou soulager ses équipes.</p>
   <p>Partez de là, du besoin, et de ce que la technologie <strong>change concrètement</strong>. Le fonctionnement interne peut venir ensuite, s'il éclaire vraiment quelque chose. Un test que j'utilise souvent&nbsp;: retirez le nom de la techno de votre phrase. Si le bénéfice reste clair, vous parlez de valeur. S'il s'évapore, c'est que vous parliez d'outil.</p>
 
-  <h2><span class="n">02</span>Traduire, sans déformer</h2>
+  <h2><span class="n">2</span>Traduire, sans déformer</h2>
   <p>Vulgariser, c'est d'abord traduire&nbsp;: trouver l'image du quotidien qui fait saisir une idée complexe en une seconde. Une bonne analogie fait souvent plus qu'une dizaine de diapositives.</p>
   <p>Le risque, c'est l'excès inverse. À trop simplifier, on finit par dire faux. Tout l'enjeu est de rendre accessible sans caricaturer ni promettre la lune. Une vulgarisation réussie laisse la personne plus juste, pas seulement rassurée. Si votre image laisse croire que «&nbsp;l'IA pense comme un humain&nbsp;», elle a déformé au lieu d'éclairer.</p>
 
-  <h2><span class="n">03</span>Montrer plutôt qu'expliquer</h2>
+  <h2><span class="n">3</span>Montrer plutôt qu'expliquer</h2>
   <p>On comprend l'IA beaucoup plus vite en la voyant qu'en écoutant la décrire. Une démonstration de trente secondes, un avant/après, un exemple pris dans le métier de la personne en face&nbsp;: c'est souvent là que le déclic se produit.</p>
   <p>Dès que vous le pouvez, remplacez une explication abstraite par une preuve concrète. Ce qui se voit cesse d'intimider.</p>
 
-  <h2><span class="n">04</span>Nommer les peurs au lieu de les contourner</h2>
+  <h2><span class="n">4</span>Nommer les peurs au lieu de les contourner</h2>
   <p>L'IA soulève des questions légitimes&nbsp;: l'emploi, la perte de sens, le contrôle, la place laissée à l'humain. Les ignorer, ou les balayer d'un «&nbsp;ne vous inquiétez pas&nbsp;», ne rassure personne. Bien au contraire, ça nourrit la méfiance.</p>
   <p>La confiance se construit sur l'honnêteté. Nommez les inquiétudes, reconnaissez les limites, dites clairement ce que la technologie sait faire et ce qu'elle ne sait pas. Un discours qui assume ses zones d'ombre est toujours plus crédible qu'un discours qui survend.</p>
 
-  <h2><span class="n">05</span>Incarner</h2>
+  <h2><span class="n">5</span>Incarner</h2>
   <p>C'est sans doute le principe le plus important, et le plus négligé. Une technologie abstraite a besoin de visages, d'histoires, d'une voix. On ne s'attache pas à un concept, mais à des gens, à des usages, à des parcours.</p>
   <p>Derrière chaque cas d'usage, il y a quelqu'un dont le quotidien change. Racontez cette personne-là. C'est elle qui rendra l'IA tangible et humaine, bien plus que n'importe quelle fiche technique.</p>
 
   <blockquote>Vulgariser, je ne l'ai jamais vécu comme appauvrir un sujet, mais comme le rendre accessible à celles et ceux que ça concerne.</blockquote>
 
   <p>Ces cinq principes ne réclament ni bagage technique, ni budget. Ils demandent surtout un changement de posture&nbsp;: faire passer la compréhension avant l'effet du discours. C'est, au fond, tout le travail de la communication d'innovation.</p>
-
-  <div class="art-cta">
-    <h3>Besoin de rendre votre sujet IA clair et incarné ?</h3>
-    <p>J'accompagne les organisations et les équipes pour vulgariser la tech, structurer leurs prises de parole et embarquer leurs publics.</p>
-    <a class="btn" href="/#contact">Parlons-en →</a>
+      <p class="author">Par Vanessa Nobrega, consultante en communication et image de marque à Nice.</p>
+    </article>
   </div>
-
-  <p class="art-more"><a href="/articles">← Retour à tous les articles</a></p>
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="wrap">
+      <h2 id="cta-title">Parlons de votre projet.</h2>
+      <p>Un brief, une question, une idée de mission. Écrivez-moi, je vous réponds rapidement.</p>
+      <a href="/#contact">Me contacter <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg></a>
+    </div>
+  </section>
 </main>
-
-<footer class="lp-foot">
-  <span>© 2026 Vanessa Nobrega</span>
-  <span><a href="/">Accueil →</a></span>
-</footer>
-
+<footer><div><span>© 2026 Vanessa Nobrega</span><span><a href="/mentions-legales">Mentions légales</a></span></div></footer>
 </body>
 </html>
