@@ -75,3 +75,17 @@ VNobrega-Landing-Freelance.html
 !photos-action/art-innovation.jpg
 !photos-action/art-contenus.jpg
 !photos-action/art-innovation2.jpg
+
+# Images optimisées de la nouvelle page
+!assets/img/*.jpg
+!assets/logos/*.png
+
+# Fichiers de travail et notes internes : jamais publiés
+HANDOFF.md
+PRODUCT.md
+Entretien-*.md
+comm-lancement.md
+maquette-*.html
+choix-*.html
+articles-brouillons/
+inspirations/

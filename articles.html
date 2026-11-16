@@ -1,120 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Journal — Regards sur la communication & l'IA · Vanessa Nobrega</title>
-<meta name="description" content="Articles et réflexions sur la communication d'innovation, la vulgarisation de l'IA et les contenus, par Vanessa Nobrega, consultante communication & IA.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journal | Vanessa Nobrega, communication et image de marque</title>
+<meta name="description" content="Les articles de Vanessa Nobrega sur la communication, l'image de marque, la visibilité sur Google et dans les IA, et la place de l'IA dans les métiers de la communication.">
 <link rel="canonical" href="https://vanessanobrega.com/articles">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
-<meta name="theme-color" content="#36291F">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Journal — Regards sur la communication & l'IA">
-<meta property="og:description" content="Réflexions evergreen sur la communication d'innovation et la vulgarisation de l'IA.">
-<meta property="og:url" content="https://vanessanobrega.com/articles">
-<meta property="og:image" content="https://vanessanobrega.com/og-image-v9.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://vanessanobrega.com/og-image-v9.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<meta property="og:image" content="https://vanessanobrega.com/og-image-v10.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --display:'Cormorant Garamond',serif; --sans:'Inter',-apple-system,sans-serif; --mono:'JetBrains Mono',monospace;
-    --brown:#36291F; --beige:#ECE3D2; --paper:#F7F1E4; --ink:#2A2016; --muted:#6F6151;
-    --accent:#C16B3D; --accent-deep:#A8511F; --line:#DDD2BD;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);background:var(--beige);color:var(--ink);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;transition:color .2s}
-  a:hover{color:var(--accent-deep)}
+:root{--bg:#fff;--bg2:#f0f3fc;--ink:#0b0b0f;--ink2:#4c4f5c;--line:rgba(11,11,15,.12);--accent:#1f3fd1;--pad:clamp(20px,4.5vw,64px);--display:"Barlow Semi Condensed",sans-serif;--body:"Barlow",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:300 18px/1.7 var(--body);-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#fff}
+a{color:inherit;text-underline-offset:.22em;text-decoration-thickness:1px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav div{max-width:1360px;margin:0 auto;padding:0 var(--pad);height:68px;display:flex;justify-content:space-between;align-items:center}
+.nav a{text-decoration:none;font-size:15px}
+.nav .brand{font-weight:500}
+.nav .links{display:flex;gap:28px}
+.wrap{max-width:760px;margin:0 auto;padding:0 var(--pad)}
+header.art{padding:clamp(56px,8vw,110px) 0 clamp(32px,4vw,48px)}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--ink2);text-decoration:none;margin-bottom:40px}
+.back svg,.cta a svg{width:15px;height:15px}
+.cat{display:block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+h1{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(2.3rem,5vw,3.9rem);line-height:1;letter-spacing:-.005em;text-wrap:balance;margin-bottom:24px}
+.meta{font-size:14.5px;color:var(--ink2)}
+article.body{padding-bottom:40px}
+article.body > p:first-child{font-size:1.2em;line-height:1.6;color:var(--ink)}
+article.body p{margin:0 0 1.15em;text-wrap:pretty}
+article.body h2{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(1.6rem,2.8vw,2.2rem);line-height:1.05;margin:2.2em 0 .7em;text-wrap:balance}
+article.body h3{font-family:var(--display);font-weight:600;font-size:1.3rem;line-height:1.2;margin:1.6em 0 .5em}
+article.body ul,article.body ol{margin:0 0 1.3em 1.2em}
+article.body li{margin-bottom:.45em;padding-left:.2em}
+article.body li::marker{color:var(--accent)}
+article.body a{color:var(--accent)}
+article.body strong{font-weight:500}
+.author{margin:40px 0 0;padding-top:24px;border-top:1px solid var(--line);font-size:15.5px;color:var(--ink2)}
+.sources{margin:28px 0 0;font-size:14px;color:var(--ink2)}
+.sources h2{font-family:var(--body);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:500;margin-bottom:10px;color:var(--ink2)}
+.sources ul{list-style:none;display:grid;gap:6px}
+.sources a{color:var(--ink2)}
+.cta{background:var(--accent);color:#fff;margin-top:clamp(56px,8vw,96px);padding:clamp(48px,7vw,88px) 0}
+.cta h2{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(2rem,4.5vw,3.4rem);line-height:1;margin-bottom:18px}
+.cta p{color:#dfe5fb;margin-bottom:28px;max-width:46ch}
+.cta a{display:inline-flex;align-items:center;gap:.6em;background:#fff;color:var(--accent);text-decoration:none;font-weight:500;font-size:16px;border-radius:999px;padding:14px 22px}
+footer{padding:28px 0 36px;font-size:14px;color:var(--ink2)}
+footer div{max-width:1360px;margin:0 auto;padding:0 var(--pad);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (max-width:640px){.nav .links{gap:18px}.nav .links a:not(:last-child){display:none}body{font-size:17px}}
 
-  .lp-nav{display:flex;justify-content:space-between;align-items:center;padding:24px clamp(20px,5vw,64px);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(236,227,210,0.92);backdrop-filter:blur(8px);z-index:10}
-  .lp-logo{font-family:var(--display);font-weight:700;font-size:24px;color:var(--brown);letter-spacing:.01em}
-  .lp-logo:hover{color:var(--accent)}
-  .lp-back{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-  .lp-back:hover{color:var(--accent)}
-
-  .wrap{max-width:820px;margin:0 auto;padding:clamp(48px,8vw,90px) clamp(20px,5vw,40px) 40px}
-  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-  h1{font-family:var(--display);font-weight:600;font-size:clamp(36px,7vw,58px);line-height:1.04;letter-spacing:-.01em;color:var(--brown)}
-  .intro{font-family:var(--sans);font-style:normal;font-size:19px;line-height:1.6;color:var(--muted);margin-top:24px;max-width:54ch;padding-left:22px;border-left:3px solid var(--accent)}
-
-  .list{margin-top:54px}
-  .post{display:flex;gap:30px;align-items:center;padding:30px 0;border-top:1px solid var(--line);transition:transform .25s}
-  .post:hover{transform:translateX(6px)}
-  .post-thumb{flex:0 0 230px}
-  .post-thumb img{display:block;width:230px;height:172px;object-fit:cover;border-radius:8px;filter:grayscale(1)}
-  .post-thumb img[src*="stock-salon"]{object-position:center top}
-  .post-body{flex:1;min-width:0}
-  @media (max-width:640px){ .post{flex-direction:column;align-items:stretch;gap:14px} .post-thumb{flex:none} .post-thumb img{width:100%;height:180px} }
-  .post .cat{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
-  .post h2{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.15;color:var(--brown);letter-spacing:-.01em;margin-bottom:10px}
-  .post:hover h2{color:var(--accent-deep)}
-  .post p{color:var(--ink);max-width:62ch;margin-bottom:12px}
-  .post .meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted)}
-  .post .meta .arrow{color:var(--accent);margin-left:6px}
-
-  .soon{margin-top:46px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-
-  .lp-foot{border-top:1px solid var(--line);padding:28px clamp(20px,5vw,64px);font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:820px;margin:40px auto 0}
+.list{list-style:none;border-top:1px solid var(--line);margin-bottom:clamp(64px,9vw,120px)}
+.list a{display:grid;grid-template-columns:200px 1fr auto;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .4s cubic-bezier(.16,1,.3,1)}
+.list a:hover{padding-left:10px}
+.list small{font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+.list .t{font-family:var(--display);font-weight:700;font-size:clamp(1.25rem,2vw,1.7rem);line-height:1.15}
+.list a:hover .t{color:var(--accent)}
+.list .r{font-size:14px;color:var(--ink2);white-space:nowrap}
+.wide{max-width:1100px}
+@media (max-width:760px){.list a{grid-template-columns:1fr;gap:6px}}
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Journal de Vanessa Nobrega", "url": "https://vanessanobrega.com/articles", "inLanguage": "fr-FR", "author": {"@type": "Person", "name": "Vanessa Nobrega", "url": "https://vanessanobrega.com/"}, "blogPost": [{"@type": "BlogPosting", "headline": "Google répond à la place des sites : comment garder votre marque visible ?", "url": "https://vanessanobrega.com/articles/google-repond-a-la-place-des-sites-visibilite-marque"}, {"@type": "BlogPosting", "headline": "AI Act : que changent les règles de transparence pour vos contenus ?", "url": "https://vanessanobrega.com/articles/ai-act-transparence-contenus-communication"}, {"@type": "BlogPosting", "headline": "Dircom à temps partagé : pour qui, et comment ça marche ?", "url": "https://vanessanobrega.com/articles/dircom-temps-partage"}, {"@type": "BlogPosting", "headline": "Refaire son identité de marque : par où commencer ?", "url": "https://vanessanobrega.com/articles/refaire-identite-de-marque-etapes"}, {"@type": "BlogPosting", "headline": "Former son équipe communication à l'IA : par où commencer ?", "url": "https://vanessanobrega.com/articles/former-equipe-communication-ia"}, {"@type": "BlogPosting", "headline": "Augmenter sa com avec l'IA sans perdre son identité", "url": "https://vanessanobrega.com/articles/ia-communication-sans-perdre-incarnation"}, {"@type": "BlogPosting", "headline": "Communication d'innovation : par où commencer", "url": "https://vanessanobrega.com/articles/communication-innovation-par-ou-commencer"}, {"@type": "BlogPosting", "headline": "Parler d'IA sans jargon : 5 principes pour se faire comprendre", "url": "https://vanessanobrega.com/articles/parler-ia-sans-jargon"}]}</script>
 </head>
 <body>
-
-<header class="lp-nav">
-  <a href="/" class="lp-logo">VN</a>
-  <a href="/" class="lp-back">← Retour à l'accueil</a>
-</header>
-
-<main class="wrap">
-  <p class="eyebrow">Journal</p>
-  <h1>Regards sur la communication &amp; l'IA</h1>
-  <p class="intro">Des réflexions de fond sur la communication d'innovation, la vulgarisation de l'IA et la création de contenus.</p>
-
-  <div class="list">
-
-    <a class="post" href="/articles/ia-communication-sans-perdre-incarnation">
-      <div class="post-thumb"><img src="/photos-action/art-contenus.jpg" alt="Augmenter sa com avec l'IA" loading="lazy"></div>
-      <div class="post-body">
-        <div class="cat">IA &amp; Contenus</div>
-        <h2>Augmenter sa com avec l'IA sans perdre son identité</h2>
-        <p>L'IA écrit vite, mais souvent « comme tout le monde ». Où placer le curseur entre vitesse et incarnation pour qu'elle serve votre voix au lieu de la lisser.</p>
-        <div class="meta">5 min de lecture <span class="arrow">Lire →</span></div>
-      </div>
-    </a>
-
-    <a class="post" href="/articles/communication-innovation-par-ou-commencer">
-      <div class="post-thumb"><img src="/photos-action/art-innovation2.jpg" alt="Communication d'innovation" loading="lazy"></div>
-      <div class="post-body">
-        <div class="cat">Communication d'innovation</div>
-        <h2>Communication d'innovation : par où commencer</h2>
-        <p>Vous avez une techno remarquable, mais le message ne prend pas ? La méthode en 5 étapes pour passer de l'abstrait à un récit clair et désirable.</p>
-        <div class="meta">6 min de lecture <span class="arrow">Lire →</span></div>
-      </div>
-    </a>
-
-    <a class="post" href="/articles/parler-ia-sans-jargon">
-      <div class="post-thumb"><img src="/photos-action/stock-salon-v2.jpg" alt="Parler d'IA sans jargon" loading="lazy"></div>
-      <div class="post-body">
-        <div class="cat">IA &amp; Vulgarisation</div>
-        <h2>Parler d'IA sans jargon : 5 principes pour se faire comprendre</h2>
-        <p>On croit qu'il faut être technique pour être crédible sur l'IA. C'est l'inverse. Cinq principes pour rendre la tech claire et embarquer vos publics.</p>
-        <div class="meta">5 min de lecture <span class="arrow">Lire →</span></div>
-      </div>
-    </a>
-
-  </div>
-
-  <p class="soon">Un article par spécialité — vulgarisation, communication d'innovation, IA &amp; contenus.</p>
+<header class="nav"><div><a class="brand" href="/">Vanessa Nobrega</a><nav class="links" aria-label="Navigation"><a href="/#offres">Offres</a><a href="/articles">Journal</a><a href="/#contact">Contact</a></nav></div></header>
+<main class="wrap wide">
+  <header class="art">
+    <h1>Journal.</h1>
+    <p class="meta">Communication, image de marque, visibilité et IA dans nos métiers.</p>
+  </header>
+  <ul class="list">
+      <li><a href="/articles/google-repond-a-la-place-des-sites-visibilite-marque"><small>Visibilité</small><span class="t">Google répond à la place des sites : comment garder votre marque visible ?</span><span class="r">6 min</span></a></li>
+      <li><a href="/articles/ai-act-transparence-contenus-communication"><small>IA et réglementation</small><span class="t">AI Act : que changent les règles de transparence pour vos contenus ?</span><span class="r">6 min</span></a></li>
+      <li><a href="/articles/dircom-temps-partage"><small>Dircom</small><span class="t">Dircom à temps partagé : pour qui, et comment ça marche ?</span><span class="r">6 min</span></a></li>
+      <li><a href="/articles/refaire-identite-de-marque-etapes"><small>Branding</small><span class="t">Refaire son identité de marque : par où commencer ?</span><span class="r">6 min</span></a></li>
+      <li><a href="/articles/former-equipe-communication-ia"><small>Formation</small><span class="t">Former son équipe communication à l&#x27;IA : par où commencer ?</span><span class="r">6 min</span></a></li>
+      <li><a href="/articles/ia-communication-sans-perdre-incarnation"><small>IA et contenus</small><span class="t">Augmenter sa com avec l&#x27;IA sans perdre son identité</span><span class="r">5 min</span></a></li>
+      <li><a href="/articles/communication-innovation-par-ou-commencer"><small>Communication d'innovation</small><span class="t">Communication d&#x27;innovation : par où commencer</span><span class="r">6 min</span></a></li>
+      <li><a href="/articles/parler-ia-sans-jargon"><small>Vulgarisation</small><span class="t">Parler d&#x27;IA sans jargon : 5 principes pour se faire comprendre</span><span class="r">5 min</span></a></li>
+  </ul>
 </main>
-
-<footer class="lp-foot">
-  <span>© 2026 Vanessa Nobrega</span>
-  <span><a href="/">Accueil →</a></span>
-</footer>
-
+<footer><div><span>© 2026 Vanessa Nobrega</span><span><a href="/mentions-legales">Mentions légales</a></span></div></footer>
 </body>
 </html>
