@@ -27,8 +27,9 @@
 <meta name="twitter:image" content="https://vanessanobrega.com/og-image-v11.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="assets/img/portrait-hero.jpg">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&family=Barlow:wght@300;400;500&display=swap"></noscript>
+<link rel="preload" as="image" imagesrcset="assets/img/portrait-hero-800.jpg 800w, assets/img/portrait-hero-1200.jpg 1200w, assets/img/portrait-hero.jpg 1700w" imagesizes="(max-width: 640px) 650px, 95vh" fetchpriority="high">
 <style>
 :root{
   --stone:#e9e6e1;
@@ -460,7 +461,7 @@ section.logos h2.small{font-family:var(--body);font-weight:400;font-size:13px;le
 
 <section class="hero" aria-label="Présentation" style="padding:0">
   <div class="hero-photo">
-    <img src="assets/img/portrait-hero.jpg" width="1700" height="1648" alt="Vanessa Nobrega, en noir et blanc, rit assise sur un tabouret" fetchpriority="high">
+    <img src="assets/img/portrait-hero-1200.jpg" srcset="assets/img/portrait-hero-800.jpg 800w, assets/img/portrait-hero-1200.jpg 1200w, assets/img/portrait-hero.jpg 1700w" sizes="(max-width: 640px) 650px, 95vh" width="1700" height="1648" alt="Vanessa Nobrega, en noir et blanc, rit assise sur un tabouret" fetchpriority="high">
   </div>
   <div class="where">
     <i><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.2" stroke="currentColor" stroke-width="1.2"/><path d="M1.8 8h12.4M8 1.8c1.8 1.9 2.6 3.9 2.6 6.2S9.8 12.3 8 14.2C6.2 12.3 5.4 10.3 5.4 8S6.2 3.7 8 1.8Z" stroke="currentColor" stroke-width="1.2"/></svg></i>
@@ -547,7 +548,7 @@ section.logos h2.small{font-family:var(--body);font-weight:400;font-size:13px;le
 <section class="about" id="apropos" aria-labelledby="about-title">
   <div class="wrap">
     <div class="about-photo">
-      <img src="assets/img/portrait-face.jpg" width="866" height="1300" alt="Vanessa Nobrega, portrait en noir et blanc, regard face à l'objectif" loading="lazy">
+      <img src="assets/img/portrait-face-700.jpg" srcset="assets/img/portrait-face-700.jpg 466w, assets/img/portrait-face.jpg 866w" sizes="(max-width: 1000px) 440px, 40vw" width="866" height="1300" alt="Vanessa Nobrega, portrait en noir et blanc, regard face à l'objectif" loading="lazy">
     </div>
     <div class="about-text">
       <h2 id="about-title">Dix ans de communication, <em>cinq dans l'IA.</em></h2>
