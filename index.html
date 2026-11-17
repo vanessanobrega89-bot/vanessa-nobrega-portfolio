@@ -232,10 +232,13 @@ footer a{color:var(--on-night-2)}
 }
 @media (max-width:640px){
   body{font-size:16px}
-  .hero{height:92svh}
-  .hero-photo img{height:84%;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 26%);mask-image:linear-gradient(to bottom,transparent 0,#000 26%)}
-  .role{display:none}
-  .where{top:auto;bottom:calc(clamp(5.5rem,17vw,17rem)*.9 + 56px)}
+  .hero{height:auto;min-height:0;display:flex;flex-direction:column;padding:96px 0 0!important}
+  .role{position:static;order:1;width:100%;max-width:none;box-sizing:border-box;padding:0 var(--pad);font-size:21px;line-height:1.3;white-space:normal}
+  .role svg{display:none}
+  .where{position:static;order:2;align-self:flex-start;margin:20px var(--pad) 0}
+  .hero-photo{position:relative;order:3;inset:auto;height:min(108vw,540px);margin-top:8px}
+  .hero-photo img{height:100%;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%)}
+  .name{bottom:6px}
   .logos ul{grid-template-columns:repeat(3,1fr)}
   .posts,.row{grid-template-columns:1fr}
   .timeline li{grid-template-columns:1fr;gap:2px}
