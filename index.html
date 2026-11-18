@@ -83,6 +83,10 @@ section{padding:clamp(96px,13vw,190px) 0}
 .nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
 .nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
 .nav{transition:background-color .35s var(--ease)}
+.form-status{margin-top:16px;font-size:15px;min-height:1.6em}
+.form-status:empty{display:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+form button[disabled]{opacity:.6;cursor:wait}
 .nav.solid{mix-blend-mode:normal;color:var(--ink);background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
 
 /* Hero */
@@ -699,10 +703,11 @@ section.logos h2.small{font-family:var(--body);font-weight:400;font-size:13px;le
         <li><a href="https://www.linkedin.com/in/vanessanobrega/" rel="noopener" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
-    <form action="https://formsubmit.co/vanessa.nobrega89@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Nouveau message depuis votre site">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="0737ebc1-8a12-419b-8b19-6aa9f6fc5273">
+      <input type="hidden" name="subject" value="Nouveau message depuis vanessanobrega.com">
+      <input type="hidden" name="from_name" value="Site vanessanobrega.com">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="row">
         <label>Nom<input type="text" name="name" autocomplete="name" required></label>
         <label>E-mail<input type="email" name="email" autocomplete="email" required></label>
@@ -711,6 +716,7 @@ section.logos h2.small{font-family:var(--body);font-weight:400;font-size:13px;le
       <button type="submit" class="btn">Envoyer
         <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4"/></svg>
       </button>
+      <p class="form-status" role="status" aria-live="polite"></p>
     </form>
   </div>
 </section>
@@ -741,6 +747,28 @@ document.querySelectorAll('.obtn').forEach(b => b.addEventListener('click', () =
   if (t && !t.value.trim()) t.value = `Bonjour Vanessa, je souhaite parler de l'offre « ${b.dataset.offre} ».\n\n`;
   setTimeout(() => document.querySelector('#contact input[name="name"]').focus({preventScroll:true}), 600);
 }));
+</script>
+<script>
+(() => {
+  const f = document.querySelector('#contact form');
+  if (!f || !window.fetch) return;
+  const st = f.querySelector('.form-status'), b = f.querySelector('button[type=submit]'), label = b.firstChild.textContent;
+  f.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    b.disabled = true; b.firstChild.textContent = 'Envoi en cours… ';
+    st.textContent = '';
+    const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 20000);
+    try {
+      const r = await fetch(f.action, {method:'POST', body:new FormData(f), headers:{Accept:'application/json'}, signal:ctrl.signal});
+      const j = await r.json().catch(() => ({}));
+      if (r.ok && String(j.success) === 'true') { f.reset(); st.textContent = 'Merci, votre message est bien envoyé. Je vous réponds rapidement.'; }
+      else throw new Error(j.message || r.status);
+    } catch (err) {
+      st.innerHTML = 'Le message n’a pas pu partir. Écrivez-moi directement à <a href="mailto:vanessa.nobrega89@gmail.com">vanessa.nobrega89@gmail.com</a>.';
+      console.warn('Formulaire :', err);
+    } finally { clearTimeout(t); b.disabled = false; b.firstChild.textContent = label; }
+  });
+})();
 </script>
 </body>
 </html>
