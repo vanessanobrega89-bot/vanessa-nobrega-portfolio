@@ -296,6 +296,28 @@ footer a{color:var(--on-night-2)}
 .cur.hide i{transform:scale(0.01)}
 html.has-cur,html.has-cur a,html.has-cur button,html.has-cur summary{cursor:none}
 
+/* Parcours */
+.parcours{background:var(--stone-2)}
+.parcours .head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;align-items:end;margin-bottom:clamp(48px,6vw,88px)}
+.parcours .head p{color:var(--ink-2);font-size:clamp(1.05rem,1.3vw,1.18rem);max-width:42ch}
+.parcours h2 em{color:var(--accent)}
+.pstats{list-style:none;grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(20px,2.4vw,32px)}
+.pstats li{background:var(--stone-2);border-radius:12px;padding:16px 20px;display:flex;flex-direction:column;justify-content:space-between;min-height:0}
+.pstats strong{display:block;font-family:var(--display);font-weight:var(--dw);font-size:clamp(1.7rem,2.6vw,2.4rem);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pstats li>span{color:var(--ink-2);font-size:13.5px;line-height:1.4;display:block;max-width:30ch;margin-top:6px}
+.tl{list-style:none;display:grid;gap:12px}
+.tl>li{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,4fr) minmax(0,5fr);gap:clamp(16px,3vw,48px);padding:clamp(24px,3vw,36px) clamp(22px,3vw,40px);background:var(--stone);border-radius:16px;align-items:baseline}
+.tl .yr{font-size:14px;letter-spacing:.04em;color:var(--accent);font-variant-numeric:tabular-nums}
+.tl h3{font-size:clamp(1.3rem,2vw,1.8rem);line-height:1.1;margin-bottom:6px}
+.tl .org{color:var(--ink-2);font-size:15px}
+.tl .desc{color:var(--ink-2);font-size:15.5px;line-height:1.55;max-width:52ch}
+.tl-foot{margin-top:28px;font-size:14px;color:var(--ink-2)}
+.js-tl .tl>li{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--i)*90ms)}
+.js-tl .tl.in>li{opacity:1;transform:none}
+@media (max-width:1000px){.parcours .head{grid-template-columns:1fr}.tl>li{grid-template-columns:1fr 2fr}.tl .desc{grid-column:2}}
+@media (max-width:640px){.pstats{grid-template-columns:1fr}.pstats li{min-height:0}.tl>li{grid-template-columns:1fr;gap:6px}.tl .desc{grid-column:auto;margin-top:6px}}
+@media (prefers-reduced-motion:reduce){.js-tl .tl>li{opacity:1;transform:none}}
+
 /* Couleurs et polices : Bleu Klein et Barlow */
 :root{
   --stone:#ffffff;--stone-2:#f0f3fc;--ink:#0b0b0f;--ink-2:#4c4f5c;--line:rgba(11,11,15,.12);
@@ -511,6 +533,7 @@ section.logos h2.small{font-family:var(--body);font-weight:400;font-size:13px;le
         <li><a href="#offres">Offres</a></li>
         <li><a href="#studio">Studio</a></li>
         <li><a href="#apropos">À propos</a></li>
+        <li><a href="#parcours">Parcours</a></li>
         <li><a href="#journal">Journal</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -611,14 +634,50 @@ section.logos h2.small{font-family:var(--body);font-weight:400;font-size:13px;le
 <section class="about" id="apropos" aria-labelledby="about-title">
   <div class="wrap">
     <div class="about-photo">
-      <img src="assets/img/portrait-face-700.jpg" srcset="assets/img/portrait-face-700.jpg 466w, assets/img/portrait-face.jpg 866w" sizes="(max-width: 1000px) 440px, 40vw" width="866" height="1300" alt="Vanessa Nobrega, portrait en noir et blanc, regard face à l'objectif" loading="lazy">
+      <img src="assets/img/portrait-face-700.jpg" srcset="assets/img/portrait-face-700.jpg 466w, assets/img/portrait-face.jpg 866w" sizes="(max-width: 1000px) 440px, 40vw" width="866" height="1300" alt="Vanessa Nobrega, portrait en noir et blanc, regard face à l'objectif" decoding="async">
     </div>
     <div class="about-text">
-      <h2 id="about-title">Dix ans de communication, <em>cinq dans l'IA.</em></h2>
-      <p>Je m'appelle Vanessa Nobrega. Je fais de la communication depuis plus de dix ans.</p>
-      <p>J'ai travaillé dans le public comme dans le privé, et dans des univers très différents : le sport, l'art, la mode, la santé, l'e-commerce, l'innovation et l'intelligence artificielle. Cette diversité m'aide à comprendre vite vos publics et vos besoins.</p>
-      <p>J'aime les projets où tout reste à clarifier. J'écoute, je challenge, puis je construis avec vous une communication qui vous ressemble et qui tient dans la durée.</p>
+      <h2 id="about-title">Une communication <em>qui vous ressemble.</em></h2>
+      <p>Pas de recette toute faite. Chaque structure a son histoire, sa culture, ses mots. Mon travail, c'est de les trouver et de les rendre visibles.</p>
+      <p>Public, privé, sport, art, mode, santé, e-commerce, innovation : j'ai souvent changé de terrain, et c'est devenu ma force. Je m'adapte vite, je saisis vos enjeux et je parle la langue de vos publics.</p>
+      <p>Et surtout, je travaille avec vous, pas à votre place. J'écoute, j'échange, je challenge quand il le faut. Le résultat vous ressemble, parce qu'on l'a construit ensemble.</p>
     </div>
+  </div>
+</section>
+
+<section class="parcours" id="parcours" aria-labelledby="parcours-title">
+  <div class="wrap">
+    <div class="head">
+      <h2 id="parcours-title">Plus de dix ans <em>de terrain.</em></h2>
+      <p>Du privé à l'innovation publique, quatre étapes qui ont construit ma façon de travailler.</p>
+    </div>
+    <ol class="tl">
+      <li>
+        <span class="yr">2021 – 2026</span>
+        <div><h3>Responsable de la communication</h3><p class="org">La Maison de l'IA, Sophia Antipolis</p></div>
+        <p class="desc">Pilotage de la communication à 360°, de la stratégie à l'exécution : stratégie corporate et digitale, positionnement et identité de marque, ligne éditoriale et production de contenus. Structuration du service communication et pilotage des prestataires.</p>
+        <ul class="pstats">
+          <li><strong><span data-count="130000">130 000</span>+</strong><span>personnes sensibilisées à l'IA</span></li>
+          <li><strong><span data-count="5">5</span> ans</strong><span>à piloter la stratégie de communication</span></li>
+          <li><strong>≈ <span data-count="20">20</span></strong><span>partenaires institutionnels, économiques et académiques animés</span></li>
+        </ul>
+      </li>
+      <li>
+        <span class="yr">2018 – 2020</span>
+        <div><h3>Cheffe de projet web</h3><p class="org">MinoDuSud</p></div>
+        <p class="desc">E-commerce et marketing digital : ventes en ligne, contenus, plateformes et production photo.</p>
+      </li>
+      <li>
+        <span class="yr">2015 – 2018</span>
+        <div><h3>Consultante en communication</h3><p class="org">Indépendante, Côte d'Azur</p></div>
+        <p class="desc">Conseil en stratégie de communication : identités visuelles, supports, sites web et développement commercial.</p>
+      </li>
+      <li>
+        <span class="yr">2013 – 2015</span>
+        <div><h3>Chargée de communication</h3><p class="org">Ascoma Assureurs Conseil, Monaco</p></div>
+        <p class="desc">Stratégie de communication, relations clients et partenaires, conception éditoriale et graphique des supports, suivi de production.</p>
+      </li>
+    </ol>
   </div>
 </section>
 
@@ -896,9 +955,9 @@ document.querySelectorAll('.obtn').forEach(b => b.addEventListener('click', () =
   if (ap) {
     ap.classList.add('js-reveal');
     const io2 = new IntersectionObserver(es => es.forEach(e => {
-      if (e.isIntersecting) { ap.classList.add('in'); io2.unobserve(ap); }
-    }), {threshold:.25});
-    io2.observe(ap);
+      if (e.isIntersecting) { ap.classList.add('in'); io2.unobserve(e.target); }
+    }), {threshold:.15});
+    io2.observe(ap.parentElement); // le parent, car le clip-path cache la photo elle-même à l'observateur
   }
 
   // Curseur personnalisé (souris uniquement)
@@ -973,6 +1032,30 @@ document.querySelectorAll('.obtn').forEach(b => b.addEventListener('click', () =
   bars.forEach((b, k) => { b.style.cursor = 'pointer'; b.addEventListener('click', () => { stop(); show(k); start(); }); });
   new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? start() : stop()), {threshold:.3}).observe(fr);
   imgs.slice(1).forEach(im => { im.loading = 'eager'; });
+})();
+</script>
+<script>
+(() => {
+  const sec = document.querySelector('.parcours'); if (!sec) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fmt = n => n.toLocaleString('fr-FR').replace(/\u202f|\u00a0/g, ' ');
+  const nums = [...sec.querySelectorAll('[data-count]')];
+  const tl = sec.querySelector('.tl');
+  [...tl.children].forEach((li, k) => li.style.setProperty('--i', k));
+  if (reduce) return;
+  sec.classList.add('js-tl');
+  nums.forEach(n => n.textContent = '0');
+  const count = el => {
+    const end = +el.dataset.count, t0 = performance.now(), d = 1800;
+    const step = now => { const k = Math.min((now - t0) / d, 1), e = 1 - Math.pow(1 - k, 4); el.textContent = fmt(Math.round(end * e)); if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  };
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    if (e.target === tl) tl.classList.add('in'); else count(e.target);
+    io.unobserve(e.target);
+  }), {threshold:.15});
+  nums.forEach(n => io.observe(n)); io.observe(tl);
 })();
 </script>
 </body>
